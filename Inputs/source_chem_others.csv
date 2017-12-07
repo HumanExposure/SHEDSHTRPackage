@@ -1,0 +1,8 @@
+"Source.type","Source.ID","Source.description","Variable","Chemical","Units","Gender","Min.Age","Max.Age","Form","Mean","CV"
+"Article","A.001","Article 001","chem.prev","1912_24_9","[-] ","B ",0,99,"Point ",1,0
+"Article","A.001","Article 001","y0","1912_24_9","[-] ","B ",0,99,"Point ",1,0
+"Food","CG","Food; CG Cereal Grains","chem.prev","1912_24_9","[-] ","B ",0,99,"Point ",1,0
+"Food","CG","Food; CG Cereal Grains","migration.conc","1912_24_9","[ug/g]","B ",0,99,"Point ",1,0
+"Food","CG","Food; CG Cereal Grains","contact","1912_24_9","[-]","B ",0,99,"Point ",1,0
+"Product","P.001","Product 001","chem.prev","1912_24_9","[-] ","B ",0,99,"Point ",1,0
+"Product","P.001","Product 001","f.chemical","1912_24_9","[-] ","B ",0,99,"Point ",1,0

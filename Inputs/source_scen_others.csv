@@ -1,0 +1,4 @@
+"source.type","source.ID","source.description","Indoor","food.residue","food.migration","product.direct.dermal","product.direct.ingestion","product.direct.inhalationAerosol","product.direct.inhalationVapor","product.downthedrain","product.indirect","article.emission"
+"Article","A.001","Article 0011",1,0,0,0,0,0,0,0,0,1
+"Food","CG","Food; CG Cereal Grains",1,0,1,0,0,0,0,0,0,0
+"Product","P.001","Product 001",1,0,0,0,0,0,0,1,0,0

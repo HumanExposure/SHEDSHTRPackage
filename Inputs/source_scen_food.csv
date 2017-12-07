@@ -1,0 +1,32 @@
+"source.type","source.ID","source.description","Indoor","food.residue","food.migration","product.direct.dermal","product.direct.ingestion","product.direct.inhalationAerosol","product.direct.inhalationVapor","product.downthedrain","product.indirect","article.emission"
+"Food","AS","FOOD; AS: ASPARAGUS ",1,1,0,0,0,0,0,0,0,0
+"Food","BA","FOOD; BA: BANANA ",1,1,0,0,0,0,0,0,0,0
+"Food","BF","FOOD; BF: BEEF ",1,1,0,0,0,0,0,0,0,0
+"Food","BR","FOOD; BR: BRASSICA LEAFY VEGETABLES ",1,1,0,0,0,0,0,0,0,0
+"Food","BS","FOOD; BS: BERRIES OR SMALL FRUIT ",1,1,0,0,0,0,0,0,0,0
+"Food","BV","FOOD; BV: BULB VEGETABLES ",1,1,0,0,0,0,0,0,0,0
+"Food","CF","FOOD; CF: CITRUS FRUITS ",1,1,0,0,0,0,0,0,0,0
+"Food","CG","FOOD; CG: CEREAL GRAINS ",1,1,0,0,0,0,0,0,0,0
+"Food","CV","FOOD; CV: CURCURBIT VEGETABLES ",1,1,0,0,0,0,0,0,0,0
+"Food","DP","FOOD; DP: DAIRY PRODUCTS ",1,1,0,0,0,0,0,0,0,0
+"Food","DW","FOOD; DW: DRINKING WATER ",1,1,0,0,0,0,0,0,0,0
+"Food","EF","FOOD; EF: EDIBLE FUNGI ",1,1,0,0,0,0,0,0,0,0
+"Food","EG","FOOD; EG: EGG ",1,1,0,0,0,0,0,0,0,0
+"Food","FI","FOOD; FI: FISH ",1,1,0,0,0,0,0,0,0,0
+"Food","FV","FOOD; FV: FRUITING VEGETABLES ",1,1,0,0,0,0,0,0,0,0
+"Food","HO","FOOD; HO: HONEY ",1,1,0,0,0,0,0,0,0,0
+"Food","HS","FOOD; HS: HERBS AND SPICES ",1,1,0,0,0,0,0,0,0,0
+"Food","LE","FOOD; LE: LEAFY VEGETABLES ",1,1,0,0,0,0,0,0,0,0
+"Food","LV","FOOD; LV: LEGUME VEGETABLES ",1,1,0,0,0,0,0,0,0,0
+"Food","MA","FOOD; MA: MANGO ",1,1,0,0,0,0,0,0,0,0
+"Food","OT","FOOD; OT: OTHER ",1,1,0,0,0,0,0,0,0,0
+"Food","PA","FOOD; PA: PAPAYA ",1,1,0,0,0,0,0,0,0,0
+"Food","PE","FOOD; PE: PEANUT ",1,1,0,0,0,0,0,0,0,0
+"Food","PF","FOOD; PF: POME FRUITS ",1,1,0,0,0,0,0,0,0,0
+"Food","PI","FOOD; PI: PINEAPPLE ",1,1,0,0,0,0,0,0,0,0
+"Food","PO","FOOD; PO: POULTRY ",1,1,0,0,0,0,0,0,0,0
+"Food","PR","FOOD; PR: PORK ",1,1,0,0,0,0,0,0,0,0
+"Food","RS","FOOD; RS: RAISINS ",1,1,0,0,0,0,0,0,0,0
+"Food","RT","FOOD; RT: ROOT OR TUBER VEGETABLES ",1,1,0,0,0,0,0,0,0,0
+"Food","SF","FOOD; SF: STONE FRUITS ",1,1,0,0,0,0,0,0,0,0
+"Food","TN","FOOD; TN: TREE NUTS ",1,1,0,0,0,0,0,0,0,0

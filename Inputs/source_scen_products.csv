@@ -1,0 +1,324 @@
+"source.type","source.id","source.description","indoor","food.residue","food.migration","product.direct.dermal","product.direct.ingestion","product.direct.inhalationaerosol","product.direct.inhalationvapor","product.downthedrain","product.indirect","article.emission"
+"Product","P.AC.010.029","arts and crafts adhesive-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.AC.010.999","arts and crafts adhesive-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.AC.020.000","arts and crafts cleaner",1,0,0,1,0,0,1,1,1,0
+"Product","P.AC.030.029","arts and crafts finish-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.AC.030.999","arts and crafts finish-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.AC.040.000","arts and crafts paint",1,0,0,1,0,0,1,1,1,0
+"Product","P.AC.050.029","body paint-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.AC.050.999","body paint-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.AC.060.000","bubble solution",1,0,0,1,0,0,1,1,0,0
+"Product","P.AC.070.000","craft kit",1,0,0,1,0,0,1,1,1,0
+"Product","P.AC.080.000","crayons",1,0,0,1,0,0,1,0,1,0
+"Product","P.AC.090.000","dye",1,0,0,1,0,0,1,1,1,0
+"Product","P.AC.100.029","fabric paints and sealers-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.AC.100.999","fabric paints and sealers-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.AC.110.000","finger paint",1,0,0,1,0,0,1,1,0,0
+"Product","P.AC.120.000","flocking",1,0,0,1,0,1,1,1,1,0
+"Product","P.AC.130.000","fogger",1,0,0,0,0,0,1,1,1,0
+"Product","P.AC.140.000","glaze",1,0,0,1,0,0,1,1,1,0
+"Product","P.AC.150.000","gun cleaner",1,0,0,1,0,0,1,1,1,0
+"Product","P.AC.160.000","pens and markers",1,0,0,1,0,0,1,0,1,0
+"Product","P.AC.170.000","play dough",1,0,0,1,0,0,1,0,0,0
+"Product","P.AP.010.000","antifreeze",0,0,0,1,0,0,1,0,0,0
+"Product","P.AP.020.029","auto air freshener-spray",0,0,0,1,0,1,1,0,0,0
+"Product","P.AP.020.999","auto air freshener-NOC",0,0,0,1,0,0,1,0,0,0
+"Product","P.AP.030.029","auto fluids and additives-spray",0,0,0,1,0,1,1,0,0,0
+"Product","P.AP.030.999","auto fluids and additives-NOC",0,0,0,1,0,0,1,0,0,0
+"Product","P.AP.040.029","auto lubricant-spray",0,0,0,1,0,1,1,0,0,0
+"Product","P.AP.040.999","auto lubricant-NOC",0,0,0,1,0,0,1,0,0,0
+"Product","P.AP.050.029","auto paint-spray",0,0,0,1,0,1,1,0,0,0
+"Product","P.AP.050.999","auto paint-NOC",0,0,0,1,0,0,1,0,0,0
+"Product","P.AP.060.000","auto refrigerant",0,0,0,1,0,0,1,0,0,0
+"Product","P.AP.070.000","boat cleaner",0,0,0,1,0,0,1,0,0,0
+"Product","P.AP.080.000","boat engine fluids",0,0,0,1,0,0,1,0,0,0
+"Product","P.AP.090.000","body cleaner",0,0,0,1,0,0,1,0,0,0
+"Product","P.AP.100.029","body repair-spray",0,0,0,1,0,0,1,0,0,0
+"Product","P.AP.100.999","body repair-NOC",0,0,0,1,0,0,1,0,0,0
+"Product","P.AP.110.029","body wax-spray",0,0,0,1,0,1,1,0,0,0
+"Product","P.AP.110.999","body wax-NOC",0,0,0,1,0,0,1,0,0,0
+"Product","P.AP.120.029","degreaser-spray",0,0,0,1,0,1,1,0,0,0
+"Product","P.AP.120.999","degreaser-NOC",0,0,0,1,0,0,1,0,0,0
+"Product","P.AP.130.029","detailing-spray",0,0,0,1,0,1,1,0,0,0
+"Product","P.AP.130.999","detailing-NOC",0,0,0,1,0,0,1,0,0,0
+"Product","P.AP.140.000","motor oil",0,0,0,1,0,0,1,0,0,0
+"Product","P.AP.150.029","windows or windshield-spray",0,0,0,1,0,1,1,0,0,0
+"Product","P.AP.150.999","windows or windshield-NOC",0,0,0,1,0,0,1,0,0,0
+"Product","P.HM.010.029","adhesive remover-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.HM.010.999","adhesive remover-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.020.000","caulk or sealant",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.030.000","concrete",0,0,0,1,0,0,1,1,0,0
+"Product","P.HM.040.029","corrosion protection-spray",0,0,0,1,0,1,1,1,0,0
+"Product","P.HM.040.999","corrosion protection-NOC",0,0,0,1,0,0,1,1,0,0
+"Product","P.HM.050.000","degreaser",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.060.029","finish-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.HM.060.999","finish-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.070.000","grout sealer",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.080.000","lock deicer",0,0,0,1,0,1,1,1,0,0
+"Product","P.HM.090.029","lubricant-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.HM.090.999","lubricant-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.100.000","mortar or grout",0,0,0,1,0,0,1,1,0,0
+"Product","P.HM.110.029","multipurpose adhesive-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.HM.110.999","multipurpose adhesive-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.120.005","paint-exterior",0,0,0,1,0,0,1,1,0,0
+"Product","P.HM.120.009","paint-interior",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.120.029","paint-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.HM.120.999","paint-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.130.029","paint cleaner-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.HM.130.999","paint cleaner-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.140.000","paint texture",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.150.000","paint thinner",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.160.000","patch and repair",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.170.000","plumbing",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.180.005","primer-exterior",0,0,0,1,0,0,1,1,0,0
+"Product","P.HM.180.009","primer-interior",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.180.029","primer-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.HM.180.999","primer-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.190.000","putty or filler",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.200.000","refrigerant",1,0,0,1,0,1,1,0,0,0
+"Product","P.HM.210.000","roof",0,0,0,1,0,0,1,0,0,0
+"Product","P.HM.220.000","septic system",0,0,0,1,0,0,1,0,0,0
+"Product","P.HM.230.000","spray foam",1,0,0,1,0,0,1,0,1,0
+"Product","P.HM.240.005","stain-exterior",0,0,0,1,0,0,1,1,0,0
+"Product","P.HM.240.999","stain-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.250.029","stripper-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.HM.250.999","stripper-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.260.005","surface sealer-exterior",0,0,0,1,0,0,1,1,0,0
+"Product","P.HM.260.029","surface sealer-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.HM.260.999","surface sealer-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.HM.270.000","welding",0,0,0,1,0,0,1,0,0,0
+"Product","P.HM.280.000","wood adhesive",1,0,0,1,0,0,1,1,1,0
+"Product","P.HO.010.000","printer ink",1,0,0,1,0,0,1,0,1,0
+"Product","P.HO.020.000","printer toner",1,0,0,1,0,0,1,0,1,0
+"Product","P.HO.030.000","white out",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.010.007","air freshener-gel",1,0,0,1,0,0,1,0,1,0
+"Product","P.IH.010.013","air freshener-liquid",1,0,0,1,0,0,1,0,1,0
+"Product","P.IH.010.016","air freshener-oil or diffuse",1,0,0,1,0,0,1,0,1,0
+"Product","P.IH.010.029","air freshener-spray",1,0,0,1,0,1,1,0,1,0
+"Product","P.IH.010.999","air freshener-NOC",1,0,0,1,0,0,1,0,1,0
+"Product","P.IH.020.000","automatic dishwashing additive",1,0,0,1,0,0,1,1,0,0
+"Product","P.IH.030.007","automatic dishwashing detergent-gel",1,0,0,1,0,0,1,1,0,0
+"Product","P.IH.030.023","automatic dishwashing detergent-powder",1,0,0,1,0,0,1,1,0,0
+"Product","P.IH.030.999","automatic dishwashing detergent-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.IH.040.029","bathroom cleaner-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.IH.040.999","bathroom cleaner-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.050.000","bleach",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.060.000","candles",1,0,0,1,0,0,1,0,1,0
+"Product","P.IH.070.029","carpet cleaner-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.IH.070.999","carpet cleaner-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.080.000","carpet deodorizer",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.090.000","dish soap",1,0,0,1,0,0,1,1,0,0
+"Product","P.IH.100.029","disinfectant-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.IH.100.999","disinfectant-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.110.000","drain",1,0,0,1,0,0,1,1,0,0
+"Product","P.IH.120.000","dry cleaner",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.130.000","dryer sheets",1,0,0,1,0,0,1,0,1,0
+"Product","P.IH.140.029","electronics cleaner-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.IH.140.999","electronics cleaner-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.150.000","fabric deodorizer",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.160.000","fabric protectant",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.170.000","fabric softener",1,0,0,1,0,0,1,1,0,0
+"Product","P.IH.180.000","fireplace",1,0,0,1,0,0,1,0,1,0
+"Product","P.IH.190.000","floor cleaner",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.200.000","floor polish",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.210.029","glass cleaner-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.IH.210.999","glass cleaner-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.220.000","hand cleaner",1,0,0,1,0,0,1,1,0,0
+"Product","P.IH.230.029","heavy duty cleaner-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.IH.230.999","heavy duty cleaner-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.240.029","houseplant care-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.IH.240.999","houseplant care-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.250.000","lamp oil or lighter fluid",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.260.013","laundry detergent-liquid",1,0,0,1,0,0,1,1,0,0
+"Product","P.IH.260.023","laundry detergent-powder",1,0,0,1,0,0,1,1,0,0
+"Product","P.IH.260.999","laundry detergent-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.IH.270.000","laundry fragrance",1,0,0,1,0,0,1,1,0,0
+"Product","P.IH.280.029","laundry stain remover-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.IH.280.999","laundry stain remover-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.IH.290.029","laundry starch-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.IH.290.999","laundry starch-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.300.000","lime remover",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.310.000","metal polish",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.320.029","oven cleaner-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.IH.320.999","oven cleaner-NOC",1,0,0,1,0,1,1,1,1,0
+"Product","P.IH.330.000","shoe polish or protectant",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.340.029","surface cleaner-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.IH.340.999","surface cleaner-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.IH.350.000","upholstery cleaner",1,0,0,1,0,1,1,1,1,0
+"Product","P.IH.360.029","wood polish-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.IH.360.999","wood polish-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.LY.010.005","cleaner-exterior",0,0,0,1,0,0,1,1,0,0
+"Product","P.LY.020.000","garden care-other",0,0,0,1,0,0,1,0,0,0
+"Product","P.LY.030.000","garden fertilizer",0,0,0,1,0,0,1,0,0,0
+"Product","P.LY.040.000","grill or camping fuel",0,0,0,1,0,0,1,0,0,0
+"Product","P.LY.050.029","herbicide-spray",0,0,0,1,0,1,1,0,0,0
+"Product","P.LY.050.999","herbicide-NOC",0,0,0,1,0,0,1,0,0,0
+"Product","P.LY.060.000","lawn fertilizer",0,0,0,1,0,0,1,0,0,0
+"Product","P.LY.070.000","lawnmower fluids",0,0,0,1,0,0,1,0,0,0
+"Product","P.LY.080.000","mulch",0,0,0,1,0,0,1,0,0,0
+"Product","P.LY.090.002","pool chemicals-algaecide",0,0,0,1,0,0,1,0,0,0
+"Product","P.LY.090.003","pool chemicals-chlorinating",0,0,0,1,0,0,1,0,0,0
+"Product","P.LY.090.022","pool chemicals-ph control",0,0,0,1,0,0,1,0,0,0
+"Product","P.LY.090.025","pool chemicals-shock",0,0,0,1,0,0,1,0,0,0
+"Product","P.LY.090.999","pool chemicals-NOC",0,0,0,1,0,0,1,0,0,0
+"Product","P.LY.100.000","potting soil",0,0,0,1,0,0,1,0,0,0
+"Product","P.LY.110.000","surface deicer",0,0,0,1,0,0,1,0,0,0
+"Product","P.LY.120.000","trees",0,0,0,1,0,0,1,0,0,0
+"Product","P.PC.010.029","acne spot treatment-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.010.999","acne spot treatment-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.020.000","aftershave",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.030.000","baby lotion",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.040.000","baby oil",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.050.000","baby powder",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.060.000","baby shampoo",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.070.000","baby wash",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.080.000","baby wipes",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.090.000","bar soap",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.100.000","bath oil",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.110.000","bath paints or crayons",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.120.000","bath salts",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.130.000","bite relief",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.140.000","blush or bronzer",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.150.000","body adhesive",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.160.000","body care set",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.170.029","body oil-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.170.999","body oil-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.180.000","body powder",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.190.000","body scrub",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.200.000","body wash",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.210.000","body wipes",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.220.000","bubble bath",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.230.000","clipper lubricant or cleaner",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.240.029","contact care-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.240.999","contact care-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.250.000","cosmetic tool cleaner",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.260.000","denture adhesive",1,0,0,1,1,0,1,1,0,0
+"Product","P.PC.270.000","denture cleaner",1,0,0,1,1,0,1,1,0,0
+"Product","P.PC.280.007","deodorant-gel",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.280.028","deodorant-solid",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.280.029","deodorant-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.280.999","deodorant-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.290.029","depilatory-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.290.999","depilatory-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.300.000","diaper cream",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.310.029","dry shampoo-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.310.999","dry shampoo-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.320.000","ethnic hair care",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.330.000","eye cream",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.340.000","eye drops",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.350.029","eye lid spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.360.013","eye liner-liquid",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.360.999","eye liner-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.370.000","eye makeup-other",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.380.000","eye products",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.390.000","eye shadow",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.400.000","face cleansing wipes",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.410.029","face cream or moisturizer-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.410.999","face cream or moisturizer-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.420.000","face mask",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.430.000","face powder",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.440.001","face scrub-acne",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.440.999","face scrub-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.450.001","face wash-acne",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.450.029","face wash-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.450.999","face wash-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.460.029","foot care-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.460.999","foot care-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.470.000","foundation or concealer",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.480.029","fragrance-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.480.999","fragrance-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.490.000","glitter",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.500.000","hair bleach",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.510.019","hair color-permanent",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.510.024","hair color-professional",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.510.030","hair color-temporary",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.510.031","hair color-temporary spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.510.999","hair color-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.520.000","hair color activator",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.530.000","hair color developer",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.540.000","hair color toner",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.550.011","hair conditioner-leave-in",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.550.012","hair conditioner-leave-in-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.550.029","hair conditioner-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.550.999","hair conditioner-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.560.024","hair conditioning treatment-professional",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.560.029","hair conditioning treatment-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.560.999","hair conditioning treatment-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.570.000","hair relaxer",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.580.000","hair spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.590.007","hair styling-gel",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.590.008","hair styling-gel-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.590.014","hair styling-mousse",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.590.015","hair styling-mousse-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.590.023","hair styling-powder",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.590.029","hair styling-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.590.999","hair styling-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.600.029","hand sanitizer-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.600.999","hand sanitizer-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.610.000","hand soap",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.620.000","hand wipes",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.630.007","hand or body lotion-gel",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.630.008","hand or body lotion-gel-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.630.029","hand or body lotion-spray",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.630.999","hand or body lotion-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.640.000","lice shampoo",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.650.000","liniment",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.660.000","lip balm",1,0,0,1,1,0,1,1,0,0
+"Product","P.PC.670.000","lip color",1,0,0,1,1,0,1,1,0,0
+"Product","P.PC.680.000","lip gloss",1,0,0,1,1,0,1,1,0,0
+"Product","P.PC.690.000","lip liner",1,0,0,1,1,0,1,1,0,0
+"Product","P.PC.700.000","makeup primer",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.710.000","makeup remover",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.720.000","makeup set",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.730.000","mascara",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.740.029","mouthwash-spray",1,0,0,1,1,0,1,1,0,0
+"Product","P.PC.740.999","mouthwash-NOC",1,0,0,1,1,0,1,1,0,0
+"Product","P.PC.750.000","nail adhesive",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.760.000","nail polish",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.770.000","nail polish remover",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.780.018","nail products-other",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.780.999","nail products-other-spray",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.790.029","scalp treatment-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.790.999","scalp treatment-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.800.029","self-tanner-spray",1,0,0,1,0,1,1,1,0,0
+"Product","P.PC.800.999","self-tanner-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.810.000","sexual wellness",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.820.004","shampoo-dandruff",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.820.999","shampoo-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.830.007","shaving cream-gel",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.830.999","shaving cream-NOC",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.840.029","sunscreen-spray",0,0,0,1,0,1,1,1,0,0
+"Product","P.PC.840.100","sunscreen-children",0,0,0,1,0,0,1,1,0,0
+"Product","P.PC.840.101","sunscreen-children-spray",0,0,0,1,0,1,1,1,0,0
+"Product","P.PC.840.999","sunscreen-NOC",0,0,0,1,0,0,1,1,0,0
+"Product","P.PC.850.000","teeth whitener",1,0,0,1,1,0,1,1,0,0
+"Product","P.PC.860.000","toner",1,0,0,1,0,0,1,1,0,0
+"Product","P.PC.870.007","toothpaste-gel",1,0,0,1,1,0,1,1,0,0
+"Product","P.PC.870.999","toothpaste-NOC",1,0,0,1,1,0,1,1,0,0
+"Product","P.PC.880.000","waxing",1,0,0,1,0,0,1,1,0,0
+"Product","P.PE.010.029","animal repellent-spray",0,0,0,1,0,1,1,0,0,0
+"Product","P.PE.010.999","animal repellent-NOC",0,0,0,1,0,0,1,0,0,0
+"Product","P.PE.020.029","fungicide-spray",0,0,0,1,0,1,1,0,0,0
+"Product","P.PE.020.999","fungicide-NOC",0,0,0,1,0,0,1,0,0,0
+"Product","P.PE.030.005","insect repellent-exterior",0,0,0,1,0,0,1,0,0,0
+"Product","P.PE.030.006","insect repellent-exterior-spray",0,0,0,1,0,1,1,0,0,0
+"Product","P.PE.030.026","insect repellent-skin",0,0,0,1,0,1,1,1,0,0
+"Product","P.PE.030.027","insect repellent-skin-spray",0,0,0,1,0,1,1,1,0,0
+"Product","P.PE.030.029","insect repellent-spray",0,0,0,1,0,1,1,1,0,0
+"Product","P.PE.030.999","insect repellent-NOC",0,0,0,1,0,0,1,1,0,0
+"Product","P.PE.040.005","insecticide-exterior",0,0,0,1,0,0,1,0,0,0
+"Product","P.PE.040.006","insecticide-exterior-spray",0,0,0,1,0,1,1,0,0,0
+"Product","P.PE.040.009","insecticide-interior",1,0,0,1,0,0,1,1,1,0
+"Product","P.PE.040.010","insecticide-interior-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.PE.040.029","insecticide-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.PE.040.999","insecticide-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.PE.050.000","rodenticide",1,0,0,1,0,0,1,1,1,0
+"Product","P.PT.010.000","aquarium",1,0,0,1,0,0,1,1,1,0
+"Product","P.PT.020.000","cat litter",1,0,0,1,0,0,1,0,1,0
+"Product","P.PT.030.029","other pet treatments-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.PT.030.999","other pet treatments-NOC",1,0,0,1,0,0,1,1,1,0
+"Product","P.PT.040.020","pesticide-pet",1,0,0,1,0,0,1,1,1,0
+"Product","P.PT.040.021","pesticide-pet-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.PT.050.000","pet shampoo",1,0,0,1,0,0,1,1,1,0
+"Product","P.PT.060.029","pet stain cleaner-spray",1,0,0,1,0,1,1,1,1,0
+"Product","P.PT.060.999","pet stain cleaner-NOC",1,0,0,1,0,0,1,1,1,0

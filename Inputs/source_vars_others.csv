@@ -1,0 +1,7 @@
+"source.type","source.ID","source.description","variable","var.description","Units","Gender","Min.Age","Max.Age","Form","Mean","CV"
+"Article","A.001","Article 001","home.prev","Fraction of homes with this article","[-]","B ",0,99,"point",0.8,0
+"Article","A.001","Article 001","f.area","Ratio of surface area / floor area","[-]","B ",0,99,"lognormal ",0.5,1
+"Product","P.001","Product 001","use.prev","Users as fration of population","[-]","B ",0,99,"point",1,0
+"Product","P.001","Product 001","use.freq","Number of uses per year","1/yr","B ",0,99,"normal",180,0.1
+"Product","P.001","Product 001","mass","Mass per use","g","B ",0,99,"lognormal ",5,1
+"Product","P.001","Product 001","f.drain","Fraction going down the drain","[-]","B ",0,99,"point",0.5,0
