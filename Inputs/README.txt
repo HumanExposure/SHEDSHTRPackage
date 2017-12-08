@@ -24,3 +24,9 @@ source_scen_products.csv: Source scenario file for consumer products in CPDat (c
 source_vars_food.csv: Source variable file for the artsandcrafts example run
 source_vars_others.csv: Source variable file for the other_sources example run
 source_vars_products.csv: Source variable file for consumer products in CPDat (can be used with the artsandcrafts run)
+
+run_artsandcrafts.txt: Run file for example run artsandcrafts
+run_food_residue.txt: Run file for example run food_residue
+run_other_sources.txt: Run file for example run other_sources
+run_products.txt: Run file for consumer products in CPDat
+
