@@ -1,0 +1,1 @@
+The slides included here were presented as part of a training class on SHEDS-HT at the International Society for Exposure Science Annual Meeting in Utrecht, The Netherlands, in October 2016.
