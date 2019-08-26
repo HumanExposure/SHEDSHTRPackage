@@ -1,0 +1,24 @@
+Variable,          Value
+run.name = food_residue
+n.persons        = 100
+person.output    = yes
+source.output    = yes
+min.age          = 0
+max.age          = 99
+genders          = FM 
+seasons          = PSFW 
+details          = 1
+age.match.pct    = 20
+run.seed         = 876144637
+set.size         = 10000
+act.diary.file   = Activity_diaries.csv
+chem.props.file  = Chem_props.csv  
+diet.diary.file  = Diet_diaries.csv 
+exp.factor.file  = Exp_factors.csv    
+fugacity.file    = Fugacity.csv      
+media.file       = Media.csv         
+physiology.file  = Physiology.csv  
+population.file  = Population.csv   
+source.vars.file = Source_vars_food.csv 
+source.scen.file = Source_scen_food.csv  
+source.chem.file = Source_chem_food.csv

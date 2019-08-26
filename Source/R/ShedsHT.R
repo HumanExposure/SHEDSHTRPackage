@@ -40,6 +40,7 @@ run = function(run.file="", wd="") {
   specs         <- read.run.file(run.file)
   act.diaries   <- read.act.diaries(specs$act.diary.file,specs)
   chem.props    <- read.chem.props(specs$chem.props.file,specs)
+  testprop<<-chem.props
   specs         <- update.specs(specs,chem.props)
   diet.diaries  <- read.diet.diaries(specs$diet.diary.file,specs)
   exp.factors   <- read.exp.factors(specs$exp.factor.file)
@@ -51,6 +52,7 @@ run = function(run.file="", wd="") {
   pop           <- read.pop.file(specs$population.file,specs)
   source.scen   <- read.source.scen.file(specs$source.scen.file)
   source.chem   <- read.source.chem.file(specs$source.chem.file, source.scen$src,specs)
+  testchem<<-source.chem
   specs         <- update.specs(specs,source.chem)
   source.scen   <- source.scen[source.scen$src %in% source.chem$src]
   source.vars   <- read.source.vars.file(specs$source.vars.file,source.scen)
@@ -1489,6 +1491,9 @@ food.residue = function(cdata,cb,ftype) {
   if (exists("residue",cdata)==TRUE) {
     q    <- runif(n)
     cbf  <- eval(parse(text=paste0("cb$",tolower(ftype))))
+    test3<<-ftype
+    test4<<-cb
+    
     if (!is.null(cbf)) {
       frc  <- cdata$detects/(cdata$detects+cdata$nondetects)
       diet <- diet + ifelse(q<frc, cbf*cdata$residue, 0) 
