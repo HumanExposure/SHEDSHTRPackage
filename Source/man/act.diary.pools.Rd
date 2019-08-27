@@ -7,11 +7,11 @@
 act.diary.pools(diaries, specs)
 }
 \arguments{
-\item{diaries}{A data set created internally in SHEDS.HT through the \code{\link{read.act.diaries}} function. The data are 
-activity diaries, which indicate the amount of time and level of metabolic activity in various micro environments. 
+\item{diaries}{A data set created internally in SHEDS.HT through the \code{\link{read.act.diaries}} function. The data are
+activity diaries, which indicate the amount of time and level of metabolic activity in various micro environments.
 Each line of data represents one person-day (24 hours).}
 
-\item{specs}{Output of the \code{\link{read.run.file}} function, which can be modified by the \code{\link{update.specs}} 
+\item{specs}{Output of the \code{\link{read.run.file}} function, which can be modified by the \code{\link{update.specs}}
 function before input into \code{act.diary.pools}.}
 }
 \value{
@@ -23,7 +23,7 @@ In addition, If the function runs successfully, the following message will be pr
 "Activity Diary Pooling completed"
 }
 \description{
-Assigns activity diaries from the \code{\link{Activity_diaries}} input on the \code{\link{Run}} file 
+Assigns activity diaries from the \code{\link{Activity_diaries}} input on the \code{\link{Run}} file
 (read through the \code{\link{read.act.diaries}} function) to pools based on age, gender, and season
 }
 \details{

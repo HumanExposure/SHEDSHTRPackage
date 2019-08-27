@@ -160,7 +160,7 @@ read.run.file = function(run.file="run_test.txt") {
 #' @export
 read.act.diaries = function(filename,specs) {
   # Read activity diaries file
-  dt <- as.data.table(fread(paste0("Inputs/",filename),colClasses = ("gender"="character")))
+  dt <- as.data.table(fread(paste0("inputs/",filename),colClasses = ("gender"="character")))
   if (nrow(dt)==0) stop("No data on diaries file \n")
   setnames(dt,names(dt),tolower(names(dt)))
   cols <- names(dt)[-which(names(dt) %in% c("chadid","gender","season","day.of.week"))]
@@ -192,7 +192,7 @@ read.act.diaries = function(filename,specs) {
 #' @export
 read.chem.props = function(filename,specs) {
   # Read chemical properties input file
-  dt <- as.data.table(fread(paste0("inputs/",filename),na.strings=c("",". ","."," .","NA")))
+  dt <- as.data.table(fread(paste0("inputs/",filename),na.strings=c("",".",".",".","NA")))
   setnames(dt,names(dt),tolower(names(dt)))
   if(exists("chemical",dt)) setnames(dt,"chemical","cas")
   mode(dt$cas) <- "character"
@@ -228,12 +228,9 @@ read.diet.diaries = function(filename,specs) {
   if(max.age==0 & specs$age.match.pct>0) max.age <- 1
   mode(dt$age) <- "numeric"
   dd           <- dt[dt$age>=min.age & dt$age<=max.age & dt$gender %in% specs$genders]
-
-  
   setnames(dd,"age","f.age")
   setnames(dd,"gender","f.gender")
   dd[,diet.id:=1:nrow(dd)]
-  
   setkey(dd,diet.id)
   cat("\n Reading Dietary Diaries completed")
   return(dd)
@@ -555,6 +552,7 @@ read.source.chem.file = function(filename,scenSrc,specs) {
   # Read variables from srcChem input file
   fail <- FALSE
   df <- read.csv(paste0("inputs/",filename),as.is=TRUE)
+  test2<<-df
   if (nrow(df)==0) stop ("No data on source.chemicals file \n")
   names(df)   <- tolower(str_trim(str_replace_all(names(df),","," ")))
   names(df)[substr(names(df),1,9)=="source.id"]  <- "src"
@@ -577,7 +575,6 @@ read.source.chem.file = function(filename,scenSrc,specs) {
     fail <- TRUE
     cat("\n Duplicate variable names on sources file")
   }
-
   if(!exists("src",df))     {fail<-TRUE; cat("\n No source.ID on src.chem file")}
   if(!exists("cas",df))     {fail<=TRUE; cat("\n No cas numbers on src.chem file")}
   if(!exists("varname",df)) {fail<-TRUE; cat("\n No varname on src.chem file")}
@@ -617,9 +614,7 @@ read.source.chem.file = function(filename,scenSrc,specs) {
   df$gender[df$gender=="B"] <- ""
   df$gender[df$gender==" "] <- ""
   df <- df[!is.na(df$cas),]
-  test2<<-df
   df$cas <- trimzero(str_replace_all(df$cas,"-","_"))
-
   if(mode(df$mean)!="numeric") {
     df$mean <- tolower(str_trim(str_replace_all(df$mean,","," ")))
     df$mean[df$mean=="." | df$mean==""] <- -1
@@ -638,8 +633,6 @@ read.source.chem.file = function(filename,scenSrc,specs) {
   if (specs$n.chem>0) { dt <- dt[dt$cas %in% specs$chem.list]
   } else {dt <- dt[dt$cas %in% chem.props$cas]}
   chem.list  <- sort(unique(dt$cas))
-  test2<<-chem.list
-  test3<<-scenSrc
   dt <- dt[dt$src %in% scenSrc]
   dt[substr(dt$varname,1,2)=="f."]$upper.trun <- 1
   dt$form[dt$form=='lognormal' & is.na(dt$cv)] <- 'point'

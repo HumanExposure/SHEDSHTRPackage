@@ -26,7 +26,7 @@ Models the indirect exposure to chemicals in the home for each theoretical perso
 \details{
 Indirect exposure happens after a product is no longer being used or applied, due to chemical lingering on various
 surfaces or in the air. People who come along later may receive dermal or inhalation exposure from residual chemical in the
-environment. 
+environment.
 SHEDS.HT currently has two indirect exposure scenarios. One which applies to a one-time chemical treatment applied to a
 house, and another which applies to continual releases from articles. Both scenarios consist of two parts: the first
 determines the appropriate air and surface concentrations. That code is in the \code{\link{Fugacity}} module.  The second

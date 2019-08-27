@@ -1,28 +1,28 @@
 #' add.fugs
 #'
 #' Evaluates the variables in the fugacity input file and creates values for those variables corresponding to each simulated person.
-#' 
+#'
 #' @param n.per The total number of simulated persons in this model run specified in the \code{\link{Run}} file
 #'
 #' @param x the output of the \code{\link{read.fug.inputs}} function.
-#' 
-#' @param pdmf he output of the \code{\link{add.factors}} function. A data set containing physiological and demographic parameters for each theoretical person, the duration of exposure to each potential exposure medium for each person, 
+#'
+#' @param pdmf he output of the \code{\link{add.factors}} function. A data set containing physiological and demographic parameters for each theoretical person, the duration of exposure to each potential exposure medium for each person,
 #'  the media specific exposure factors, and the  number of baths taken and hand wash events occurring per day for each person.
-#'  
+#'
 #' @details This function evaluates the variables in the fugacity input file, creating one value for each simulated
 #' person and adding each variable as a new column in the pdmf data set (renamed as pdmff). All variables are left i
-#' n their original units except for those with units ug/cm2, which are converted to ug/m2. In the fugacity calculations, 
+#' n their original units except for those with units ug/cm2, which are converted to ug/m2. In the fugacity calculations,
 #' all masses are in ug and all lengths are in m.
-#'   
+#'
 #' @return pdmff Output contains values sampled from the distributions of each relevant variable in the \code{\link{Fugacity}}
 #'  input file for each theoretical person.
-#'  
+#'
 #' @author Kristin Isaacs, Graham Glen
 #'
 #' @seealso \code{\link{add.factors}}, \code{\link{add.media}}, \code{\link{select_people}}, \code{\link{Fugacity}}, \code{\link{run}}
 #'
-#' @keywords SHEDS 
-#' 
+#' @keywords SHEDS
+#'
 #' @export
 
 add.fugs = function(n.per,x,pdmf) {
@@ -39,42 +39,42 @@ add.fugs = function(n.per,x,pdmf) {
 
 #' chem.fug
 #'
-#' Creates distributions of chemical specific parameters for each chemical of interest, in order to reflect real-world 
+#' Creates distributions of chemical specific parameters for each chemical of interest, in order to reflect real-world
 #' variability and uncertainty. These distributions are then sampled to create chemical specific parameters associated
-#' with the exposure of each simulated person. 
-#' 
+#' with the exposure of each simulated person.
+#'
 #' @param n.per The total number of simulated persons in this model run specified in the \code{\link{Run}} file.
 #'
 #' @param cprops The chemical properties required for SHEDS-HT (output of \code{chem.props} function). The default data was
-#' prepared from publicly available databases using a custom program (not part of SHEDS-HT).  
-#' The default file contains about 17 numerical inputs per chemical, but most are not used. 
-#' The required properties are molecular weight (\code{MW}), vapor pressure (\code{VP.Pa}), 
-#' solubility (\code{water.sol.mg.l}), octanol-water partition coefficient (\code{log.Kow}), 
-#' air decay rate (\code{half.air.hr}), decay rate on surfaces (\code{half.sediment.hr}), 
+#' prepared from publicly available databases using a custom program (not part of SHEDS-HT).
+#' The default file contains about 17 numerical inputs per chemical, but most are not used.
+#' The required properties are molecular weight (\code{MW}), vapor pressure (\code{VP.Pa}),
+#' solubility (\code{water.sol.mg.l}), octanol-water partition coefficient (\code{log.Kow}),
+#' air decay rate (\code{half.air.hr}), decay rate on surfaces (\code{half.sediment.hr}),
 #' and permeability coefficient (\code{Kp}).
 #'
 #' @param x From the output of the \code{\link{read.fug.inputs}} function.
 #'
-#' @details This function obtains chemical-specific properties from the chem.data data set.That data set contains 
-#' point value for each variable, which this function defines distributions around, with the exception of molecular 
+#' @details This function obtains chemical-specific properties from the chem.data data set.That data set contains
+#' point value for each variable, which this function defines distributions around, with the exception of molecular
 #' weight. The constructed distributions reflect both uncertainty and variability (for example, vapor pressure will
-#' vary with temperature, humidity, and air pressure or altitude, and may depend on the product formulation).  
-#' For each variable, a random sample is generated for each simulated person, and the set of variables becomes the 
+#' vary with temperature, humidity, and air pressure or altitude, and may depend on the product formulation).
+#' For each variable, a random sample is generated for each simulated person, and the set of variables becomes the
 #' output data set.
-#' Input surface loading variables are in units of ug/cm2 or ug/cm2/day and are converted by the function to meters, 
+#' Input surface loading variables are in units of ug/cm2 or ug/cm2/day and are converted by the function to meters,
 #' to avoid the need for conversion factors in later equations. These conversions are done after the random sampling,
 #' as otherwise the correct conversions depend on the distributional form (for example, par2 is changed for the normal,
-#' but not for the lognormal).  
-#'  
+#' but not for the lognormal).
+#'
 #' @return samples A data set with the chemical specific parameters for each combination of chemical and simulated person.
 #' For each chemical, the chemical specific parameters assigned to a given person are randomly sampled from distributions
 #' on those parameters. These distributions are created from point estimates to reflect real-world uncertainty and variability.
-#'   
+#'
 #' @author Kristin Isaacs, Graham Glen
 #'
 #' @seealso \code{\link{Fugacity}}, \code{\link{Run}}, \code{\link{run}}, \code{\link{Chem_props}}, \code{\link{get.fug.concs}}
 #'
-#' @keywords SHEDS 
+#' @keywords SHEDS
 #'
 #' @export
 
@@ -244,29 +244,29 @@ chem.fug = function(n.per,cprops,x) {
 #'
 #' @param x The output of the \code{\link{add.fugs}} function.
 #'
-#' @param cfug The output of the \code{\link{chem_fug}} function, a data set with the chemical specific parameters for each 
-#' combination of chemical and simulated person. For each chemical, the chemical specific parameters assigned to a given person 
+#' @param cfug The output of the \code{\link{chem_fug}} function, a data set with the chemical specific parameters for each
+#' combination of chemical and simulated person. For each chemical, the chemical specific parameters assigned to a given person
 #' are randomly sampled from distributions on those parameters. These distributions are created from point estimates to reflect
 #' real-world uncertainty and variability.
-#' 
+#'
 #' @details This is one of two functions that perform fugacity calculations. This one evaluates dynamic or time-dependent chemical
-#' First, a set of local variables are determined for use in later calculations.  These are a mix of fixed and chemical-dependent 
-#' variables (evaluated separately for each person).  Some variables, like chemical mass and app.rates, vary with each source, so 
+#' First, a set of local variables are determined for use in later calculations.  These are a mix of fixed and chemical-dependent
+#' variables (evaluated separately for each person).  Some variables, like chemical mass and app.rates, vary with each source, so
 #' these calculations are repeated for each source-scenario.
-#' Second, the eigenvalues and eigenvectors of the jacobian matrix are calculated.  Since the fugacity model has been reduced to 
+#' Second, the eigenvalues and eigenvectors of the jacobian matrix are calculated.  Since the fugacity model has been reduced to
 #' just two compartments (air and surface), the solutions can be expressed analytically, and there is no explicit invocation of
 #' any linear algebra routines that would normally be required.
-#' Third, the variables composing the \code{concs} output are evaluated. The variables \code{m.c.air} and \code{m.c.sur} 
+#' Third, the variables composing the \code{concs} output are evaluated. The variables \code{m.c.air} and \code{m.c.sur}
 #' are the time-constant masses, while \code{m.t0.air} and \code{m.t0.sur} are the time-dependent masses at t=0. The
-#' time-constant parts are zero here because the permanent sources (i.e. \code{c.src.air} and \code{c.src.sur}) are 
+#' time-constant parts are zero here because the permanent sources (i.e. \code{c.src.air} and \code{c.src.sur}) are
 #' assumed to be zero in these calculations.  The time-dependent masses are multiplied exponentially as a function of time,
 #' and thus approach zero when enough time has passed.
-#'      
-#' @return concs A data set containing calculated dynamic chemical flows for each unique combination 
+#'
+#' @return concs A data set containing calculated dynamic chemical flows for each unique combination
 #' of simulated person and chemical.
-#' 
+#'
 #' @author Kristin Isaacs, Graham Glen
-#' 
+#'
 #' @seealso \code{\link{chem_fugs}}, \code{\link{Fugacity}}, \code{\link{Run}}, \code{\link{run}}, \code{\link{get.y0.concs}}
 #'
 #' @keywords SHEDS kwd2
@@ -322,7 +322,7 @@ get.fug.concs = function(sdata,chem.data,x,cfug) {
   m0.sur       <- (cfug$c.prev.sur + app.rate.sur) * x$area.sur                       # m0.sur [ug]
   src.air      <- cfug$c.out.air * x$aer.out * vol.air + cfug$c.src.air * vol.air     # src.air [ug/day]
   src.sur      <- cfug$c.src.sur * x$area.sur                                         # src.sur [ug/day]
-  
+
   a <- x$aer.out + cfug$decay.air + cln.air + dep + diff.air                          # a [1/day]
   b <- res + diff.sur                                                                 # b [1/day]
   c <- dep + diff.air                                                                 # c [1/day]
@@ -342,7 +342,7 @@ get.fug.concs = function(sdata,chem.data,x,cfug) {
   k2.air   <-  (2*c*m.t0.air+(a-d+r)*m.t0.sur)*v2.air/(4*c*r)                         # k2.air [ug]
   k1.sur   <- -(2*c*m.t0.air+(a-d-r)*m.t0.sur)/(2*r)                                  # k1.sur [ug]
   k2.sur   <-  (2*c*m.t0.air+(a-d+r)*m.t0.sur)/(2*r)                                  # k2.sur [ug]
-  
+
   concs <- data.table(matrix(0,nrow=nrow(cfug),ncol=14))
   setnames(concs,1:14,c("seq","time","mass.air","mass.sur","conc.air","conc.sur",
                         "m0.air","m0.sur","q","k","gain","loss","cq0.air","cq0.sur"))
@@ -359,31 +359,31 @@ get.fug.concs = function(sdata,chem.data,x,cfug) {
 }
 
 #' get.y0.concs
-#' 
+#'
 #' Performs fugacity calculations to evaluate constant (time-independent) chemical flows, such as emissions from household articles.
 #'
 #' @param sdata The chemical-scenario data specific to relevant combinations of chemical and scenario. Generated internally.
 #'
 #' @param chem.data The list of scenario-specific information for the chemicals being evaluated. Generated internally.
 #'
-#' @param pdmff Output from the \code{\link{add.fugs}} function. A data set containing values sampled from the distributions 
+#' @param pdmff Output from the \code{\link{add.fugs}} function. A data set containing values sampled from the distributions
 #' of each relevant variable in the \code{\link{Fugacity}} input file for each theoretical person.
 #'
-#' @param cfug The output of the \code{\link{chem_fug}} function, a data set with the chemical specific parameters for each 
-#' combination of chemical and simulated person. For each chemical, the chemical specific parameters assigned to a 
+#' @param cfug The output of the \code{\link{chem_fug}} function, a data set with the chemical specific parameters for each
+#' combination of chemical and simulated person. For each chemical, the chemical specific parameters assigned to a
 #' given person are randomly sampled from distributions on those parameters. These distributions are created from point
 #' estimates to reflect real-world uncertainty and variability.
-#' 
-#' @details This function evaluates the chemical concentrations resulting from constant source emissions. Thus, the 
+#'
+#' @details This function evaluates the chemical concentrations resulting from constant source emissions. Thus, the
 #' function employs the steady state solution to the fugacity equations. The basis for these calculations is that the
 #' chemical sources are from articles, and are thus permanent and unchanging. The chemical concentrations will therefore
 #' quickly adjust so that the flows are balanced, and the concentrations remain fixed thereafter.
-#'    
+#'
 #' @return concs A data set containing calculated steady state chemical flows for each unique combination of simulated
 #'  person and chemical.
-#'  
+#'
 #' @author Kristin Isaacs, Graham Glen
-#' 
+#'
 #' @seealso \code{\link{chem_fugs}}, \code{\link{Fugacity}}, \code{\link{Run}}, \code{\link{run}}, \code{\link{get.y0.concs}}
 #'
 #' @keywords SHEDS kwd2
@@ -401,14 +401,14 @@ get.y0.concs = function(sdata,chem.data,pdmff,cfug) {
   y           <- chem.data$y0 / (1 + qstar/(cfug$h.y0*sdata$f.area*pdmff$area.sur))
   # y is average gas-phase concentration in house in [ug/m3]
   ug.mol      <- 1E6*cfug$molwt                             # ug.mol [ug/mol]
-  
+
   zvb.air     <- z.air * vol.air * ug.mol                   # zvb.air [ug/Pa]
   fug         <- y / ug.mol / z.air                         # fug [Pa]
   # fug is the fugacity of the gas-phase component
-  
+
   conc.air    <- y * ( 1 + sm.kp*pdmff$sm.load.air + lg.kp*pdmff$lg.load.air)
   # conc.air is the (gas+particle) chemical concentration in air [ug/m3]
-  
+
   mass.air    <- conc.air * vol.air                        # mass.air [ug]
   # mass.air is the airborne chemical mass [ug]
   sm.mass.sur <- pdmff$area.sur * pdmff$sm.load.sur        # sm.mass.sur [ug]

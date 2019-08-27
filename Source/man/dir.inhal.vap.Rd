@@ -28,13 +28,13 @@ Models the inhalation exposure from the vapors of volatile chemicals for each th
 }
 \details{
 This scenario considers inhalation exposure from vapors (not aerosols). For example, painting will result in the
-inhalation of vapor, but it does not involve aerosols (unless it is spray paint).  
+inhalation of vapor, but it does not involve aerosols (unless it is spray paint).
 For this scenario, the vapor pressure and the molecular weight are relevant variables for determining exposure. These
 variables are included in the input to the \code{cprops} argument, which is drawn internally from the
 \code{\link{Chem_props}} file.
 The function produces a \code{prevalence} value, which reflects the fraction of the population who use this scenario at
 all. It also produces a \code{frequency} value, which is the mean number of times per year this scenario occurs among that
-fraction of the population specified by \code{prevalence}. 
+fraction of the population specified by \code{prevalence}.
 Since SHEDS operates on the basis of one random day, the \code{frequency} is  divided by 365 and then passed to the
 \code{\link{p.round}} (probabilistic rounding) function, which rounds either up or down to the nearest integer. Very
 common events may happen more than once in a day.

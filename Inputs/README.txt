@@ -29,4 +29,4 @@ run_artsandcrafts.txt: Run file for example run artsandcrafts
 run_food_residue.txt: Run file for example run food_residue
 run_other_sources.txt: Run file for example run other_sources
 run_products.txt: Run file for consumer products in CPDat
-
+run_CPDat.txt: Run file for consumer products in CPDat (same run as run_products.txt, just added to match QuickStart Guide names)

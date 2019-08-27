@@ -19,18 +19,18 @@ entering the sewer system per person per day.
 Models the quantity of chemical entering the waste water system on a per person-day basis.
 }
 \details{
-This function models the simplest of all the current scenarios. It evaluates the amount of chemical entering 
-the waste water system, on a per person-day basis.  The "exposure" is to a system, not a person, but this method uses 
-one person's actions to estimate their contribution to the total. 
+This function models the simplest of all the current scenarios. It evaluates the amount of chemical entering
+the waste water system, on a per person-day basis.  The "exposure" is to a system, not a person, but this method uses
+one person's actions to estimate their contribution to the total.
 The function produces a \code{prevalence} value, which reflects the fraction of the population who use this scenario at
 all. It also produces a \code{frequency} value, which is the mean number  of times per year this scenario occurs among
-that fraction of the population specified by prevalence. 
-Since SHEDS operates on the basis of one random day, the \code{frequency} is  divided by 365 and then passed to the 
-\code{\link{p.round}} (probabilistic rounding) function, which rounds either up or down to the nearest integer. Very 
+that fraction of the population specified by prevalence.
+Since SHEDS operates on the basis of one random day, the \code{frequency} is  divided by 365 and then passed to the
+\code{\link{p.round}} (probabilistic rounding) function, which rounds either up or down to the nearest integer. Very
 common events may happen more than once in a day.
 The function also produces a \code{mass} variable, which refers to the  mass of the product in grams in a typical
 usage event. The \code{composition} is the percentage of that mass that is the chemical in question.
-The final output, \code{exp.ddd.mass}, is the product of the \code{prevalence}, \code{frequency}, \code{mass}, 
+The final output, \code{exp.ddd.mass}, is the product of the \code{prevalence}, \code{frequency}, \code{mass},
 \code{composition}, and the fraction going down the drain (\code{f.drain}, a variable in the \code{sd} input).
 The result is in grams per person-day.
 }

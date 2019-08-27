@@ -20,7 +20,7 @@ This function removes initial zeroes from CAS numbers.
 }
 \details{
 Each CAS number has three parts, separated by underscores.  The first part is up to seven digits, but optionally,
-leading zeroes are omitted.  For example, formaldehyde may be either "0000050_00_0" or "50_00_0". SHEDS needs to match 
+leading zeroes are omitted.  For example, formaldehyde may be either "0000050_00_0" or "50_00_0". SHEDS needs to match
 CAS numbers across input files, and trimzero is used to ensure matching even when the input files follow different conventions.
 }
 \author{

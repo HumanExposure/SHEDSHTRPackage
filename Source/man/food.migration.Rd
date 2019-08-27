@@ -18,7 +18,7 @@ exposure variables.}
 being modeled. Generated internally from the  \code{\link{Diet_diaries}} data set.}
 }
 \value{
-dietary The calculated quantity of chemical exposure from food residue and migration of chemicals into food from 
+dietary The calculated quantity of chemical exposure from food residue and migration of chemicals into food from
 packaging and other contact materials in grams per person per day.
 }
 \description{

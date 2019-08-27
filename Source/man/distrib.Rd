@@ -5,7 +5,8 @@
 \title{distrib}
 \usage{
 distrib(shape = "", par1 = NA, par2 = NA, par3 = NA, par4 = NA,
-  lt = NA, ut = NA, resamp = "y", n = 1, q = NA, p = c(1), v = "")
+  lt = NA, ut = NA, resamp = "y", n = 1, q = NA, p = c(1),
+  v = "")
 }
 \arguments{
 \item{shape}{Required with no default. The permited inputs are Bernoulli, binomial, beta, discrete, empirical,
@@ -41,12 +42,12 @@ either the input argument (if given), or the length of the input vector "q".
 produces random samples from distributuions
 }
 \details{
-This process is central to SHEDS because it is a stochastic model.  The "shape" is the essential argument, 
-with others being required for certain shapes.  For all shapes, one of  "n" or "q" must be specified.  If "n" is given, 
+This process is central to SHEDS because it is a stochastic model.  The "shape" is the essential argument,
+with others being required for certain shapes.  For all shapes, one of  "n" or "q" must be specified.  If "n" is given,
 then Distrib returns a vector of "n" independent random samples from the specified distribution.  If "q" is given, it
-must be a vector of numeric values, each between zero and one.  These are interpreted as the quantiles of the distribution 
+must be a vector of numeric values, each between zero and one.  These are interpreted as the quantiles of the distribution
 to be returned.  When "q" is given, Distrib does not generate any random values, it just evaluates the requested quantiles.
-The empirical shape requires argument "v" as a list of possible values to be returned, each with equal probability.  
+The empirical shape requires argument "v" as a list of possible values to be returned, each with equal probability.
 The other shapes require one or more of par1-par4 to be specified.  See the SHEDS Technical Manual for more details on the
 meanings of par1-par4, which vary by shape.  "Lower.trun" is the lower truncation point, meaning the smallest value that can
 be returned.  Similarly, "upper.trun" is the largest value that may be returned.  Not all distributions use lower.trun and/or

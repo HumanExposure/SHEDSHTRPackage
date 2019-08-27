@@ -19,7 +19,7 @@ immediately after use of products such as toothpaste. Does not include exposure 
 Models the ingestion exposure scenario for each theoretical person.
 }
 \details{
-This scenario is for accidental ingestion during product usage. Typical examples are toothpaste, mouthwash, 
+This scenario is for accidental ingestion during product usage. Typical examples are toothpaste, mouthwash,
 lipstick or chap stick, and similar products used on the face or mouth.
 The function produces a \code{prevalence} value, which reflects the fraction of the population who use this scenario at all.
 It also produces a \code{frequency} value, which is the mean number  of times per year this scenario occurs among that
@@ -30,7 +30,7 @@ events may happen more than once in a day.
 The function also produces a \code{mass} variable, which refers to the  mass of the product in grams in a typical usage event.
 The \code{composition} is the percentage of that mass that is the chemical in question.
 The \code{ingested} variable represents the percentage of the mass applied that becomes ingested. Since these products are
-not intended to be swallowed, this should typically be quite small (under 5\%). 
+not intended to be swallowed, this should typically be quite small (under 5\%).
 The final output is the total incidental ingested exposure for each chemical-individual combination in micrograms, which
 is the product of the above variables multiplied by a factor of 1E6.
 }

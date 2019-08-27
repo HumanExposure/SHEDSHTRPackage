@@ -9,7 +9,7 @@ add.media(n, media, pd)
 \arguments{
 \item{n}{Number of persons.}
 
-\item{media}{List of the potential contact media for the model; output of the \code{\link{read.media.file}} function. 
+\item{media}{List of the potential contact media for the model; output of the \code{\link{read.media.file}} function.
 Each is found in a specific microenvironment (micro).}
 
 \item{pd}{Data frame containing internally assigned demographic and physiological parameters for each theoretical person
