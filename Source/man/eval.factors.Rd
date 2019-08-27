@@ -7,12 +7,12 @@
 eval.factors(r, q, ef)
 }
 \arguments{
-\item{r}{Vector of row numbers, equivalent to the number of theoretical people in the model sample. This input is created 
+\item{r}{Vector of row numbers, equivalent to the number of theoretical people in the model sample. This input is created
 internally by the \code{\link{add.factors}} function.}
 
 \item{q}{User-specified list of desired quantiles to be included in the output.}
 
-\item{ef}{Distributional parameters for the exposure factors; an output of the \code{\link{exp.factors}} function and an 
+\item{ef}{Distributional parameters for the exposure factors; an output of the \code{\link{exp.factors}} function and an
 input argument to the \code{\link{add.factors}} function}
 }
 \value{

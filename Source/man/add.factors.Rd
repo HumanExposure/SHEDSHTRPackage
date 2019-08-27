@@ -33,10 +33,10 @@ Adds specific exposure factors to the \code{pdm} data table, which is output fro
 "specific" means taking into account the age, gender, season, and exposure media for each person.
 }
 \details{
-The process of adding specific exposure factors to \code{pdm} involves multiple steps. First, \code{w} is determined, 
+The process of adding specific exposure factors to \code{pdm} involves multiple steps. First, \code{w} is determined,
 which is the number of general factors plus the product of the number of media-specific factors and the number of surface media.
 Air media do not have media specific factors in this version of SHEDS. An array, \code{q}, of uniform random samples is
-generated, with one row per person and \code{w} columns.  A zero matrix, \code{r}, of the same size is defined. 
+generated, with one row per person and \code{w} columns.  A zero matrix, \code{r}, of the same size is defined.
 Once these matrices are defined, the media-specific factors are determined. Two nested loops over variable and surface type
 generate the values, which are stored in \code{r}. Next, another FOR loop determines the general factors. The \code{p} data set
 contains the age, gender, and season for each person. These two data sets are then merged. The evaluation of these factors is

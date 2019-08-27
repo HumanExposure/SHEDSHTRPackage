@@ -27,9 +27,9 @@ removed and amount ultimately contributing to the exposure dose for each person.
 }
 \details{
 This function resolves the fate of chemical after initial exposure has occurred.  The same function applies to all
-exposure scenarios. 
+exposure scenarios.
 The dermal exposure is the most complicated, as there are five removal methods. All five are randomly sampled. While the sum
-of the five means is close to one, the sum of five random samples might not be, so these samples are treated as fractions of 
+of the five means is close to one, the sum of five random samples might not be, so these samples are treated as fractions of
 their sum. The \code{rem.bath} variable is either 0 or 1, so the bath removal term is either zero or the sampled bath removal
 efficiency. The \code{rem.brush} term is also simple. The handwashing (\code{rem.wash}) and hand-to-mouth
 (\code{rem.hmouth}) transfer terms are non-linear, because higher frequencies have less chemical available for removal on
@@ -48,7 +48,7 @@ different units from the others, and because much of the dermal exposure never e
 and ingestion exposures may double-count the hand-to-mouth term. However, intake dose may be summed. In SHEDS, "intake dose"
 is the sum of the inhaled dose (which is the amount of chemical entering the lungs in ug/day), the ingestion exposure (which
 is the amount entering the GI tract in ug/day), and the dermal absorption (the amount penetrating into or through the skin,
-so it cannot otherwise be removed, in ug/day). 
+so it cannot otherwise be removed, in ug/day).
 The "absorbed dose" is also calculated: for dermal it is the same as the intake dose, but for ingestion and
 inhalation there is another absorption factor, which was set on the exposure factors input file. An estimate of the
 chemical in urine (in ug/day) is made.  Both the intake dose and the absorbed dose are reported in both (ug/day) and in

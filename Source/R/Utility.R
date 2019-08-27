@@ -1,38 +1,38 @@
 #' distrib
-#' 
+#'
 #' produces random samples from distributuions
-#' 
+#'
 #' @param shape Required with no default. The permited inputs are Bernoulli, binomial, beta, discrete, empirical,
 #' exponential, gamma, lognormal, normal, point, probability, triangle, uniform, and Weibull.
-#' 
+#'
 #' @param par1 optional value requared for some shapes. Defulat = none
 #'
 #' @param par2 optional value requared for some shapes. Defulat = none
-#' 
+#'
 #' @param par3 optional value requared for some shapes. Defulat = none
-#' 
+#'
 #' @param par4 optional value requared for some shapes. Defulat = none
-#' 
+#'
 #' @param It optional value requared for some shapes. Defulat = none
-#' 
+#'
 #' @param Ut optional value requared for some shapes. Defulat = none
-#' 
+#'
 #' @param resamp optional value requared for some shapes. Defulat = 'y'
-#' 
+#'
 #' @param n Optional	Default = 1
-#' 
+#'
 #' @param q	Optional	Default = none
-#' 
+#'
 #' @param p	Optional	Default = c(1)
-#' 
+#'
 #' @param  v Optional	Default = none
-#' 
-#' @details  This process is central to SHEDS because it is a stochastic model.  The "shape" is the essential argument, 
-#' with others being required for certain shapes.  For all shapes, one of  "n" or "q" must be specified.  If "n" is given, 
+#'
+#' @details  This process is central to SHEDS because it is a stochastic model.  The "shape" is the essential argument,
+#' with others being required for certain shapes.  For all shapes, one of  "n" or "q" must be specified.  If "n" is given,
 #' then Distrib returns a vector of "n" independent random samples from the specified distribution.  If "q" is given, it
-#' must be a vector of numeric values, each between zero and one.  These are interpreted as the quantiles of the distribution 
+#' must be a vector of numeric values, each between zero and one.  These are interpreted as the quantiles of the distribution
 #' to be returned.  When "q" is given, Distrib does not generate any random values, it just evaluates the requested quantiles.
-#' The empirical shape requires argument "v" as a list of possible values to be returned, each with equal probability.  
+#' The empirical shape requires argument "v" as a list of possible values to be returned, each with equal probability.
 #' The other shapes require one or more of par1-par4 to be specified.  See the SHEDS Technical Manual for more details on the
 #' meanings of par1-par4, which vary by shape.  "Lower.trun" is the lower truncation point, meaning the smallest value that can
 #' be returned.  Similarly, "upper.trun" is the largest value that may be returned.  Not all distributions use lower.trun and/or
@@ -41,13 +41,13 @@
 #' until they are within the limits.  If resamp="no", values outside the limits are moved to those limits.  "P" is a list of
 #' probabilities that are used only with the "discrete" or "probability" shapes.  The "p" values are essentially weights for a
 #' list of discrete values that may be returned.  The "empirical" distribution also returns discrete values, but assigns them
-#' equal weights, so then "p" is not needed. 
+#' equal weights, so then "p" is not needed.
 #'
 #' @return A vector of "n" values from one distribution, where "n" is
 #' either the input argument (if given), or the length of the input vector "q".
-#' 
+#'
 #' @author  Kristin Isaacs, Graham Glen
-#' 
+#'
 #' @export
 
 distrib = function(shape="",par1=NA,par2=NA,par3=NA,par4=NA,lt=NA,
@@ -281,23 +281,23 @@ distrib = function(shape="",par1=NA,par2=NA,par3=NA,par4=NA,lt=NA,
 }
 
 #' p.round
-#' 
-#' p.round performs stochastic or probabilistic rounding of non-integer values. 
-#' 
+#'
+#' p.round performs stochastic or probabilistic rounding of non-integer values.
+#'
 #' @param x	Required 	Default = none
-#' 
+#'
 #' @param q	Optional	Default = none
-#' 
+#'
 #' @details The input "x" is a vector of values to be rounded.  Each value of x is rounded independently, either up or down.
 #' The fractional value of x is used to determine weights for rounding in each direction.  For example, if x=4.3, then it is
 #' rounded up to 5 with probability 0.3, else rounded down to 4 (with probability 0.7).   The p.round function always returns
 #' integer values, and does not introduce bias.  In the above example, if the argument were 4.3 a large number of times, then
 #' the returned values (all either 4 or 5) would average 4.3 with a small residual error which approaches zero as "n" gets large.
-#' 
+#'
 #' @return A vector of the same length as the input "x", containing all integer values.
-#' 
+#'
 #' @author  Kristin Isaacs, Graham Glen
-#' 
+#'
 #' @export
 
 p.round = function(x=NULL,q=NA) {
@@ -309,20 +309,20 @@ p.round = function(x=NULL,q=NA) {
 }
 
 #' quantiles
-#' 
+#'
 #' This function is similar to the built-in R function "quantile", but it returns a list of pre-selected quantiles of the set
-#' of values in the vector "x".  
-#' 
+#' of values in the vector "x".
+#'
 #' @param x	Default = none
-#' 
+#'
 #' @details This function is similar to the built-in R function "quantile", but it returns a list of pre-selected quantiles
-#' of the set of values in the vector "x".  Specifically, it returns all the following quantiles: 
+#' of the set of values in the vector "x".  Specifically, it returns all the following quantiles:
 #' .005, .01, .025, .05, .1, .15, .2, .25, .3, .4, .5, .6, .7, .75, .8, .85, .9, .95, .975, .99, .995
-#' 
+#'
 #' @return This function is used to construct the tables in the "Allstats" output files.
-#' 
+#'
 #' @author  Kristin Isaacs, Graham Glen
-#' 
+#'
 #' @export
 
 quantiles = function(x) {
@@ -332,39 +332,39 @@ quantiles = function(x) {
   return(y)
 }
 
-#' summarize.chemcial 
-#' 
-#' Summarize.chemical writes a .csv file containing a summary of the exposure and dose results from the object "x".  
-#' 
+#' summarize.chemcial
+#'
+#' Summarize.chemical writes a .csv file containing a summary of the exposure and dose results from the object "x".
+#'
 #' @param x	Default = none		Exposure data set
-#' 
+#'
 #' @param c	Default = none	Index # for chemical
-#' 
+#'
 #' @param chem Default = none	CAS for chemical
-#' 
+#'
 #' @param chemical Default = none	Full chemical name
-#' 
+#'
 #' @param set	Default = none	Index # for set of simulated persons
-#' 
+#'
 #' @param sets Default = none		Total # of sets in this SHEDS run
-#' 
+#'
 #' @param specs		Default = none List of settings from the "run" input file
-#' 
+#'
 #' @details Tables are produced for each of the following cohorts: males, females, females ages 16-49, age 0-5, age 6-11,
 #' age 12-19, age 20-65, age 66+, and a table for all persons. The variables that are summarized are: dermal exposure,
 #' ingestion exposure, inhalation exposure, inhaled dose, intake dose, dermal absorption, ingestion absorption, inhalation
 #' absorption, total absorption in micrograms per day, total absorption in milligrams per kilogram per day, and chemical mass
 #' down the drain.
 #' In each table, the following statistics are computed across the appropriate subpopulation: mean, standard deviation, and
-#' quantiles .005, .01, .025, .05, .1, .15, .2, .25, .3, .4, .5, .6, .7, .75, .8, .85, .9, .95, .975, .99, .995. 
-#' 
+#' quantiles .005, .01, .025, .05, .1, .15, .2, .25, .3, .4, .5, .6, .7, .75, .8, .85, .9, .95, .975, .99, .995.
+#'
 #' @return  If "x" is a single set of data (that is, if the argument "set" is between 1 and sets, inclusive), then the .csv
 #' file created by this function has the suffix "_set#stats.csv", where "#" is the set number.  If the "set" argument is
 #' "allstats", then the .csv file has the suffix _allstats.csv".  The output file contains the tables for all cohorts with a
-#' non-zero population. 
-#' 
+#' non-zero population.
+#'
 #' @author  Kristin Isaacs, Graham Glen
-#' 
+#'
 #' @export
 
 summarize.chemical = function(x,c,chem,chemical,set,sets,specs) {
@@ -424,22 +424,22 @@ summarize.chemical = function(x,c,chem,chemical,set,sets,specs) {
 }
 
 #' summary.stats
-#' 
+#'
 #' Summary.stats constructs the table of exposure and dose statistics for cohort entered into \code{\link{summarize.chemical}}.
-#' 
+#'
 #' @param x. Data set passed from summarize.chemical for a cohort
-#' 
+#'
 #' @details Summary.stats is called by \code{\link{summarize.chemical}}.  The input data set "y"
 #' is one population cohort from the exposure data set passed into \code{\link{summarize.chemical}}.
-#' 
+#'
 #' @return y A data frame object with 23 rows and 11 columns, with each column being an exposure or dose variable,
 #' and each row containing a statistic for that variable. For each expsoure varianle the total expsoure, quantiles, mean, and
 #' SD.
-#' 
+#'
 #' @author  Kristin Isaacs, Graham Glen
-#' 
+#'
 #' @seealso \code{\link{summarize.chemical}}
-#' 
+#'
 #' @export
 
 summary.stats = function(x) {
@@ -513,22 +513,22 @@ summary.stats = function(x) {
 }
 
 #' Trimzero
-#' 
+#'
 #' This function removes initial zeroes from CAS numbers.
-#' 
+#'
 #' @param x aCAS number. Defult is none
-#' 
+#'
 #' @param y A dummy argument This helps with the removal of the zeros inteh CAS number
-#' 
+#'
 #' @details Each CAS number has three parts, separated by underscores.  The first part is up to seven digits, but optionally,
-#' leading zeroes are omitted.  For example, formaldehyde may be either "0000050_00_0" or "50_00_0". SHEDS needs to match 
+#' leading zeroes are omitted.  For example, formaldehyde may be either "0000050_00_0" or "50_00_0". SHEDS needs to match
 #' CAS numbers across input files, and trimzero is used to ensure matching even when the input files follow different conventions.
-#' 
+#'
 #' @return y a shorter CAS number. If the initial part is all zero (as in "0000000_12_3"), one zero is left in the first part
-#' (that is, "0_12_3" for this example).  
-#' 
+#' (that is, "0_12_3" for this example).
+#'
 #' @author  Kristin Isaacs, Graham Glen
-#' 
+#'
 #' @export
 
 trimzero = function(x,y) {
@@ -544,45 +544,52 @@ trimzero = function(x,y) {
 }
 
 #' unpack
-#' 
+#'
 #' @details This function is used when ShedsHT is run as an R package. Each time a new working directory is chosen, use unpack()
-#' to convert the R data objects into CSV files. Note that both /inputs and /output folders are needed under the chosen 
+#' to convert the R data objects into CSV files. Note that both /inputs and /output folders are needed under the chosen
 #' directory.Unpack() may be used with a list of object names, in which case just those objects are converted to CSV. This is
 #' useful when re-loading one or more defaults into a folder where some of the CSV files have changes, and should not be
 #' overwritten. A blank argument or empty list means that all the csv and TXT files in the R package are converted.
-#' 
+#'
 #' @author  Kristin Isaacs, Graham Glen
-#' 
+#'
 #' @export
 
 unpack = function(filelist="") {
   if (filelist=="") {
     filelist <- c("activity_diaries","chem_props","diet_diaries","exp_factors","fugacity","media","physiology","population",
                   "run_artsandcrafts","run_food_residue","run_other_sources","run_products",
-                  "source_chem_ac","source_chem_food","source_chem_products","source_chem_others", 
+                  "source_chem_ac","source_chem_food","source_chem_products","source_chem_others",
                   "source_scen_food","source_scen_products","source_scen_others",
-                  "source_vars","source_vars_products","source_vars_others")
+                  "source_vars_products","source_vars_others","README","run_CPDat")
   }
   inlib <- paste0(getwd(),"/inputs")
+  if (dir.exists(inlib)) {
+
   for (i in 1:length(filelist)) {
     infile  <- filelist[[i]]
     extension <- ".csv"
     if (tolower(substr(infile,1,3))=="run") extension <- ".txt"
+    if (tolower(substr(infile,1,3))=="rea") extension <- ".txt"
     csvfile <- paste0(tolower(infile),extension)
-    if(exists(infile)) {
-      ExportDataTables(infile,inlib,csvfile)
-    }  
+       name<-system.file("extdata", csvfile, package = "ShedsHT")
+       cat("\n Unpacking ",name)
+       file.copy(name, inlib,overwrite=T)
+       #ExportDataTables(infile,inlib,csvfile)
+  }
+  }
+  if (!dir.exists(inlib)) {
+  cat("\n The Inputs directory does not exist in the SHEDS home directory. Unpack failed.")
   }
 }
-  
 #' vpos
-#' 
+#'
 #' This function locates an item in a list.
-#' 
-#' @details this one was written because it does not require additional R packages and its behavior can be easily examined. 
-#' 
+#'
+#' @details this one was written because it does not require additional R packages and its behavior can be easily examined.
+#'
 #' @author  Kristin Isaacs, Graham Glen
-#'  
+#'
 #' @export
 
 vpos = function(v,list) {
@@ -594,14 +601,14 @@ vpos = function(v,list) {
 }
 
 #' write.persons
-#' 
+#'
 #' This function writes demographic, exposure, and dose variables to a separate output file for each chemical.
-#' 
+#'
 #' @details  THis function rounds the variables to a reasonable precision so that the files are more readable, as unrounded
 #' output is cluttered with entries with (say) 14 digits, most of which are not significant.
-#' 
+#'
 #' @author  Kristin Isaacs, Graham Glen
-#' 
+#'
 #' @export
 
 write.persons = function(x,chem,set,specs) {
@@ -742,7 +749,7 @@ write.persons = function(x,chem,set,specs) {
 #             CAS number).  If all of the first part consists of zeroes, then trimzero() leaves
 #             exactly one, so for example 000000_33_3 becomes 0_33_3.
 #
-# unpack()  This function is used when ShedsHT is run as an R package. Each time a new working 
+# unpack()  This function is used when ShedsHT is run as an R package. Each time a new working
 #           directory is chosen, use unpack() to convert the R data objects into CSV files.
 #           Note that both /inputs and /output folders are needed under the chosen directory.
 #           Unpack() may be used with a list of object names, in which case just those objects

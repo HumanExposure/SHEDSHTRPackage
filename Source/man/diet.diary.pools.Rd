@@ -7,26 +7,26 @@
 diet.diary.pools(diaries, specs)
 }
 \arguments{
-\item{specs}{Output of the \code{\link{read.run.file}} function, which can be modified by the \code{\link{update.specs}} 
+\item{specs}{Output of the \code{\link{read.run.file}} function, which can be modified by the \code{\link{update.specs}}
 function before input into \code{diet.diary.pools}.}
 
-\item{diet.diaries}{A data set created internally in SHEDS.HT through the \code{\link{read.diet.diaries}} function. 
+\item{diet.diaries}{A data set created internally in SHEDS.HT through the \code{\link{read.diet.diaries}} function.
 The data are daily diaries of dietary consumption by food group. Each line represents one person-day, with demographic
 variables followed by amounts (in grams/day) for a list of food types indicated by a short abbreviation on the header line.}
 }
 \value{
 dpool A vector of lists.  The length of \code{dpool} is the product of the gender  and age inputs specified in
-the \code{\link{Run}} file. Each element is a list of acceptable diet diary numbers for each year of age and each gender 
+the \code{\link{Run}} file. Each element is a list of acceptable diet diary numbers for each year of age and each gender
 combination.
 In addition, if the function runs successfully, the following message will be printed: "Dietary Diary Pooling completed"
 }
 \description{
-Assigns activity diaries from the \code{\link{Diet_diaries}} input on the \code{\link{Run}} file 
+Assigns activity diaries from the \code{\link{Diet_diaries}} input on the \code{\link{Run}} file
 (read through the \code{\link{read.run.file}} function) to pools based on age and gender.
 }
 \details{
 The \code{diet.diary.pools} function assigns the dietary diaries to pools. A given diary may belong to many pools,
-since every year of age has its own pool. Large pools may contain a list of several hundred diary numbers. The code contains 
+since every year of age has its own pool. Large pools may contain a list of several hundred diary numbers. The code contains
 four loops and on each step performs a sub-setting of the list of diary numbers.
 }
 \note{

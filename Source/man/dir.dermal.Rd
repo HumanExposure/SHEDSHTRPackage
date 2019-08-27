@@ -27,7 +27,7 @@ Since SHEDS operates on the basis of one random day, the frequency is  divided b
 events may happen more than once in a day.
 The function also produces a mass variable, which refers to the  mass of the product in grams in a typical usage event.
 The composition is the percentage of that mass that is the chemical in question.
-The resid variable measures the fraction that is likely to remain on the skin when the usage event ends. 
+The resid variable measures the fraction that is likely to remain on the skin when the usage event ends.
 The final output is the total dermal exposure for each chemical-individual combination in micrograms, which is the product of
 the above variables multiplied by a factor of 1E+06.
 }

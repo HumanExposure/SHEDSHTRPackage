@@ -19,7 +19,7 @@ Adjusts certain SHEDS input distribution types to conform with the requirements 
 }
 \details{
 Set.pars adjusts certain SHEDS input distribution types to conform with the requirements of the Distrib function.
-The lognormal parameters are changed from arithmetic mean and standard deviation to geometric mean and geometric standard 
+The lognormal parameters are changed from arithmetic mean and standard deviation to geometric mean and geometric standard
 deviation.  For the normal distribution, the standard deviation is computed from the mean and coefficient of variation (CV).
 For user prevalence, the input may be specified either as a point value (indicating probability) or as a Bernoulli distribution.
 If the former is used, it is converted to the latter.

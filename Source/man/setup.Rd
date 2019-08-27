@@ -14,7 +14,7 @@ all necessary SHEDS.HT inputs in an /Input folder.}
 No values returned.
 }
 \description{
-Loads required R packages and sources the modules needed to perform a SHEDS.HT run. The user might need to 
+Loads required R packages and sources the modules needed to perform a SHEDS.HT run. The user might need to
 download the packages if they are not already present (see Dependencies).
 }
 \note{

@@ -34,7 +34,7 @@ inhalation scenario.}
 }
 }
 \description{
-Extends the \code{base} data set, output from the \code{\link{generate.person.vars}} function, to include a set of 
+Extends the \code{base} data set, output from the \code{\link{generate.person.vars}} function, to include a set of
 chemical-specific exposure variables. Currently, all new variables are initialized to zero.
 }
 \seealso{

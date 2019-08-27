@@ -18,7 +18,7 @@ of values in the vector "x".
 }
 \details{
 This function is similar to the built-in R function "quantile", but it returns a list of pre-selected quantiles
-of the set of values in the vector "x".  Specifically, it returns all the following quantiles: 
+of the set of values in the vector "x".  Specifically, it returns all the following quantiles:
 .005, .01, .025, .05, .1, .15, .2, .25, .3, .4, .5, .6, .7, .75, .8, .85, .9, .95, .975, .99, .995
 }
 \author{

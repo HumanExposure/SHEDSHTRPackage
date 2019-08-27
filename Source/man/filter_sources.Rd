@@ -5,7 +5,8 @@
 \title{filter_sources}
 \usage{
 filter_sources(in.file = "source_scen_prods.csv",
-  out.file = "source_scen_subset.csv", ids = c("ALL"), types = c("ALL"))
+  out.file = "source_scen_subset.csv", ids = c("ALL"),
+  types = c("ALL"))
 }
 \arguments{
 \item{In.file}{a csv file that contains expsoure info default = "source_scen_prods.csv"}

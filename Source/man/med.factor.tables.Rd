@@ -12,7 +12,7 @@ to import the user specified \code{\link{Exp_factors}} input file. The data set 
 exposure factors. All of these variables may have age or gender-dependent distributions, although in the absence of data, many
 are assigned a single distribution from which all persons are sampled.}
 
-\item{media.sur}{A list of surface media. This data set is created internally by sub-setting the \code{\link{Media}} input 
+\item{media.sur}{A list of surface media. This data set is created internally by sub-setting the \code{\link{Media}} input
 file (read in with the \code{\link{read.media.file}} function within the \code{\link{run}} function) to extract only surface
 media.}
 }
@@ -30,7 +30,7 @@ of three media specific variables in the \code{ef} argument. These are avail.f, 
 }
 \note{
 The first input argument to \code{med.factor.tables} (ef) is created by reading in the \code{\link{Exp_factors}}
-input file (specified on the \code{\link{Run}} file) with the \code{\link{read.exp.factors}} function within the 
+input file (specified on the \code{\link{Run}} file) with the \code{\link{read.exp.factors}} function within the
 \code{\link{run}} function. The \code{media.sur} input is created by sub-setting the \code{\link{Media}} input file (read in
 with the \code{\link{read.media.file}} function within the \code{\link{run}} function).
 }

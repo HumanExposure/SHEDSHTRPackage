@@ -11,11 +11,11 @@ get.y0.concs(sdata, chem.data, pdmff, cfug)
 
 \item{chem.data}{The list of scenario-specific information for the chemicals being evaluated. Generated internally.}
 
-\item{pdmff}{Output from the \code{\link{add.fugs}} function. A data set containing values sampled from the distributions 
+\item{pdmff}{Output from the \code{\link{add.fugs}} function. A data set containing values sampled from the distributions
 of each relevant variable in the \code{\link{Fugacity}} input file for each theoretical person.}
 
-\item{cfug}{The output of the \code{\link{chem_fug}} function, a data set with the chemical specific parameters for each 
-combination of chemical and simulated person. For each chemical, the chemical specific parameters assigned to a 
+\item{cfug}{The output of the \code{\link{chem_fug}} function, a data set with the chemical specific parameters for each
+combination of chemical and simulated person. For each chemical, the chemical specific parameters assigned to a
 given person are randomly sampled from distributions on those parameters. These distributions are created from point
 estimates to reflect real-world uncertainty and variability.}
 }
@@ -27,7 +27,7 @@ concs A data set containing calculated steady state chemical flows for each uniq
 Performs fugacity calculations to evaluate constant (time-independent) chemical flows, such as emissions from household articles.
 }
 \details{
-This function evaluates the chemical concentrations resulting from constant source emissions. Thus, the 
+This function evaluates the chemical concentrations resulting from constant source emissions. Thus, the
 function employs the steady state solution to the fugacity equations. The basis for these calculations is that the
 chemical sources are from articles, and are thus permanent and unchanging. The chemical concentrations will therefore
 quickly adjust so that the flows are balanced, and the concentrations remain fixed thereafter.

@@ -10,7 +10,7 @@ run(run.file = "", wd = "")
 \item{run.file}{The name of the run file to be used for a given run.  Many different "Run"" files may be set up for special
 purposes.The one being invoked must be present in the inputs folder.}
 
-\item{wd}{The user's working directory. The working directory should contain an inputs folder, containing all necessary 
+\item{wd}{The user's working directory. The working directory should contain an inputs folder, containing all necessary
 SHEDS.HT input files. The wd value should be set once for each SHEDS.HT installation by replacing the default value in
 the definition of run().}
 }
@@ -18,7 +18,7 @@ the definition of run().}
 No variable will be returned.
 }
 \description{
-Function to call the \code{\link{Run}} txt file, which consists of user-defined parameters and calls to input files required 
+Function to call the \code{\link{Run}} txt file, which consists of user-defined parameters and calls to input files required
 to initialize a SHEDS.HT run.
 }
 \details{

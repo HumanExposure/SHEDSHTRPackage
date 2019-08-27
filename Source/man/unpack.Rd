@@ -11,7 +11,7 @@ unpack
 }
 \details{
 This function is used when ShedsHT is run as an R package. Each time a new working directory is chosen, use unpack()
-to convert the R data objects into CSV files. Note that both /inputs and /output folders are needed under the chosen 
+to convert the R data objects into CSV files. Note that both /inputs and /output folders are needed under the chosen
 directory.Unpack() may be used with a list of object names, in which case just those objects are converted to CSV. This is
 useful when re-loading one or more defaults into a folder where some of the CSV files have changes, and should not be
 overwritten. A blank argument or empty list means that all the csv and TXT files in the R package are converted.
