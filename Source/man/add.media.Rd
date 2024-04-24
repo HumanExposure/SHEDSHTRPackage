@@ -26,7 +26,7 @@ function, this function generates the exposure duration for each potential expos
 }
 \details{
 To generate the exposure duration for each theoretical person, an array q of uniform random samples is generated with
-rows = \code{n} (per set, where set size is specified by the user in the \code{\link{Run}} input file) and columns =
+rows = \code{n} (per set, where set size is specified by the user in the Run input file) and columns =
 \code{nrow(media)} (the number of potential exposure media). An array called \code{dur} is created for the number of minutes on
 the activity diary in the relevant micro multiplied by the relevant probability of contact (as specified in the
 \code{media} input). The array consists of a row for each person and a column for each of the exposure media.  The output is a

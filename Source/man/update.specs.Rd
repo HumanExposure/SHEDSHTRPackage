@@ -4,7 +4,7 @@
 \alias{update.specs}
 \title{update.specs}
 \usage{
-\method{update}{specs}(specs, dt)
+update.specs(specs,dt)
 }
 \description{
 "Specs" is the list of run settings read from the run.file.  "Dt" is a data table of source-chemical combinations for which distributions have been specified.  "Specs" contains a list of chemicals to be processed in the SHEDS run, and if any of these chemicals are missing from the "dt" table, then update.specs removes them from the list.  Otherwise, "specs" is not altered.

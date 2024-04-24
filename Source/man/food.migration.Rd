@@ -15,7 +15,7 @@ food.migration(cdata, sdata, cb, ftype)
 exposure variables.}
 
 \item{ftype}{Food consumption database which stores data on consumption in grams per day of each food type for each person
-being modeled. Generated internally from the  \code{\link{Diet_diaries}} data set.}
+being modeled. Generated internally from the  Diet_diaries data set.}
 }
 \value{
 dietary The calculated quantity of chemical exposure from food residue and migration of chemicals into food from
@@ -31,7 +31,7 @@ If migration data is stored in the \code{cdata} argument, this is added to the t
 \code{\link{food.residue}} function.
 }
 \seealso{
-\code{\link{Diet_diaries}}, \code{\link{run}}, \code{\link{p.round}}, \code{\link{make.cbase}}, \code{\link{food.residue}}
+\code{\link{run}}, \code{\link{p.round}}, \code{\link{make.cbase}}, \code{\link{food.residue}}
 }
 \author{
 Kristin Isaacs, Graham Glen

@@ -12,7 +12,7 @@ internally by the \code{\link{add.factors}} function.}
 
 \item{q}{User-specified list of desired quantiles to be included in the output.}
 
-\item{ef}{Distributional parameters for the exposure factors; an output of the \code{\link{exp.factors}} function and an
+\item{ef}{Distributional parameters for the exposure factors; an output of the exp.factors function and an
 input argument to the \code{\link{add.factors}} function}
 }
 \value{
@@ -33,7 +33,7 @@ factor and individual person. The parameters include:
 Assigns distributions for each relevant exposure factor for each theoretical persons to be modeled in SHEDS.HT.
 }
 \seealso{
-\code{\link{add.factors}}, \code{\link{exp.factors}}
+\code{\link{add.factors}}
 }
 \author{
 Krisin Isaacs, Graham Glen

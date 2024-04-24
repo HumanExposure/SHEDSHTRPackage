@@ -10,7 +10,7 @@ post.exposure(cb, cprops)
 \item{cb}{A copy of the \code{base} data set output from the \code{\link{make.cbase}} function, with columns added for
 exposure variables.}
 
-\item{cprops}{The chemical properties required for SHEDS-HT. The default file (the \code{\link{Chem_props file}} read in
+\item{cprops}{The chemical properties required for SHEDS-HT. The default file (the Chem_props file) read in
 by the \code{\link{read.chem.props}} function and modified before input into the current function) was prepared from
 publicly available databases using a custom program (not part of SHEDS-HT).  The default file contains 7 numerical inputs
 per chemical, and the required properties are molecular weight (\code{MW}), vapor pressure (\code{VP.Pa}), solubility

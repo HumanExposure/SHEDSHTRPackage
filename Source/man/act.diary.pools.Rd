@@ -4,7 +4,7 @@
 \alias{act.diary.pools}
 \title{act.diary.pools}
 \usage{
-act.diary.pools(diaries, specs)
+act.diary.pools(diaries,specs)
 }
 \arguments{
 \item{diaries}{A data set created internally in SHEDS.HT through the \code{\link{read.act.diaries}} function. The data are
@@ -16,14 +16,14 @@ function before input into \code{act.diary.pools}.}
 }
 \value{
 pool A vector of lists.  The length of \code{pool} is the product of the genders, seasons, and ages inputs specified
-in the \code{\link{Run}} file. Each element is a list of acceptable activity diary numbers for each year of age, gender,
+in the Run file. Each element is a list of acceptable activity diary numbers for each year of age, gender,
 weekend, and season combination. For example, \code{pool}[100] may have the name M0P99, which indicates that it is for
 males, on weekdays, in spring,for age=99.
 In addition, If the function runs successfully, the following message will be printed:
 "Activity Diary Pooling completed"
 }
 \description{
-Assigns activity diaries from the \code{\link{Activity_diaries}} input on the \code{\link{Run}} file
+Assigns activity diaries from the Activity_diaries input on the Run file
 (read through the \code{\link{read.act.diaries}} function) to pools based on age, gender, and season
 }
 \details{
@@ -33,7 +33,7 @@ The code contains four loops and on each step performs a sub-setting of the list
 }
 \note{
 The input to \code{act.diary.pools}, diaries, is created by reading in the Activity_diaries input file (specified on
-the \code{\link{Run}} file) with the \code{\link{read.act.diaries}} function within the \code{\link{run}} function.
+the Run file) with the \code{\link{read.act.diaries}} function within the \code{\link{run}} function.
 }
 \seealso{
 \code{\link{run}}

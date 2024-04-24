@@ -17,7 +17,7 @@ is only generated internally.
 }
 \description{
 Constructs scenario-specific exposure factors for each relevant combination of age and  gender. The input is derived
-internally from the \code{\link{Source_vars}} file specified on the \code{\link{Run}} file.
+internally from the Source_vars file specified on the Run file.
 }
 \details{
 The constructed factors are not media-specific, although they are scenario-specific,  and most scenarios include

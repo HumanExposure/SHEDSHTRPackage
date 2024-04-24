@@ -5,7 +5,7 @@
 #'  
 #' @param run.name default = name of last run (in current R session)
 #' 
-#' @param out.file default="SHEDSOutFCS.csv"
+#' @param out.file default="SHEDSOutCombined.csv"
 #' 
 #' @param metrics the summary statsistics to be pulled. default = c("5\%", "50\%", "75\%", "95\%", "99\%","mean","sd")
 #' 
@@ -27,7 +27,7 @@
 # All functions written by KKI
 # Last changes by WGG Aug 28, 2016
 
-combine_output = function(run.name=specs$run.name,out.file="SHEDSOutFCS.csv",metrics=c("5%","50%","75%","95%","99%","mean","sd") ) {
+combine_output = function(run.name=specs$run.name,out.file="SHEDSOutCombined.csv",metrics=c("5%","50%","75%","95%","99%","mean","sd") ) {
   
   allfiles   <-list.files(path=paste0("output/",run.name), all.files=FALSE, include.dirs=FALSE, full.names=TRUE)
   allcasnums <- list()
@@ -79,7 +79,7 @@ combine_output = function(run.name=specs$run.name,out.file="SHEDSOutFCS.csv",met
   cat("\n Combining data... \n")
   finaldata <- (rbindlist(allfiledata))
   write.csv(finaldata,paste0("output/",run.name,"/",out.file), row.names=FALSE)
-  return(finaldata)
+  #return(finaldata)
 }
 
 #' filter_sources

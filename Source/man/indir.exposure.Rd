@@ -29,9 +29,9 @@ surfaces or in the air. People who come along later may receive dermal or inhala
 environment.
 SHEDS.HT currently has two indirect exposure scenarios. One which applies to a one-time chemical treatment applied to a
 house, and another which applies to continual releases from articles. Both scenarios consist of two parts: the first
-determines the appropriate air and surface concentrations. That code is in the \code{\link{Fugacity}} module.  The second
+determines the appropriate air and surface concentrations. That code is in the Fugacity module.  The second
 part is the exposure calculation by the current function. Both types of indirect exposure scenarios call this function.
-The surface and air concentrations from the \code{\link{Fugacity}} module are premised on the product use actually occurring.
+The surface and air concentrations from the Fugacity module are premised on the product use actually occurring.
 Hence, \code{\link{indir.exposure}} starts by multiplying those concentrations by the \code{prevalence} (which is either 0
 or 1, evaluated separately for each person).
 For air, the exposure is the average daily concentration, which is the event concentration multiplied by the fraction of
@@ -42,7 +42,7 @@ fraction available for transfer (\code{avail.f}, unitless), the transfer coeffic
 contact \code{duration} (hr/day).  The result is the amount of chemical transferred onto the skin (ug/day).
 }
 \seealso{
-\code{\link{Fugacity}}, \code{\link{get.fug.concs}}, \code{\link{make.cbase}}, \code{\link{run}}
+\code{\link{get.fug.concs}}, \code{\link{make.cbase}}, \code{\link{run}}
 }
 \author{
 Kristin Isaacs, Graham Glen

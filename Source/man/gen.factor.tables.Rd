@@ -8,7 +8,7 @@ gen.factor.tables(ef = exp.factors)
 }
 \arguments{
 \item{ef}{A data set created internally using the \code{\link{run}} function and the \code{\link{read.exp.factors}}
-function to import the user specified \code{\link{Exp_factors}} input file. The data set contains the distributional
+function to import the user specified Exp_factors input file. The data set contains the distributional
 parameters for the exposure factors. All of these variables may have age or gender-dependent distributions, although
 in the absence of data, many are assigned a single distribution from which all persons are sampled.}
 }
@@ -22,11 +22,15 @@ In addition, if the function runs successfully, the following message is printed
 }
 \description{
 Constructs tables of non-media specific exposure factors for each relevant combination of age, gender, and season. The
-input is from the \code{\link{Exp_actors}} file (specified on the \code{\link{Run}} file) after being read through the
+input is from the Exp_factors file (specified on the Run file) after being read through the
 \code{\link{read.exp.factors}} function.
 }
+\note{
+The input to \code{gen.factor.tables} is created by reading in the Exp_factors input file specified on
+the Run file with the \code{\link{read.exp.factors}} function within the \code{\link{run}} function.
+}
 \seealso{
-\code{\link{Exp_factors}}, \code{\link{Run}}, \code{\link{run}}, \code{\link{read.exp.factors}}
+\code{\link{run}}, \code{\link{read.exp.factors}}
 }
 \author{
 Kristin Isaacs, Graham Glen

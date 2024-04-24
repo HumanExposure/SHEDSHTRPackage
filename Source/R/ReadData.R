@@ -552,7 +552,6 @@ read.source.chem.file = function(filename,scenSrc,specs) {
   # Read variables from srcChem input file
   fail <- FALSE
   df <- read.csv(paste0("inputs/",filename),as.is=TRUE)
-  test2<<-df
   if (nrow(df)==0) stop ("No data on source.chemicals file \n")
   names(df)   <- tolower(str_trim(str_replace_all(names(df),","," ")))
   names(df)[substr(names(df),1,9)=="source.id"]  <- "src"
@@ -648,7 +647,10 @@ read.source.chem.file = function(filename,scenSrc,specs) {
 #' 
 #' "Specs" is the list of run settings read from the run.file.  "Dt" is a data table of source-chemical combinations for which distributions have been specified.  "Specs" contains a list of chemicals to be processed in the SHEDS run, and if any of these chemicals are missing from the "dt" table, then update.specs removes them from the list.  Otherwise, "specs" is not altered.
 #' 
-#' @export
+#' @export update.specs
+#' 
+#' @usage update.specs(specs,dt)
+#' 
 update.specs = function(specs,dt) {
   specs$chem.list <- sort(unique(dt$cas))
   specs$n.chem    <- length(specs$chem.list)
@@ -810,7 +812,6 @@ read.source.vars.file = function(filename,src.scen) {
   }
   if (fail==TRUE) stop("\n Bad data on source.variables file \n")
   cat("\n Reading Source.variables file completed")
-  tester<<-dt
   return(dt)
 }
 

@@ -7,7 +7,7 @@
 create.scen.factors(f)
 }
 \arguments{
-\item{f}{An internally generated data set from the \code{\link{Source_vars}} input file (as specified in the \code{\link{Run}}
+\item{f}{An internally generated data set from the Source_vars input file (as specified in the Run
 file) containing data on the distribution of each source variable in SHEDS.HT.}
 }
 \value{
@@ -16,7 +16,7 @@ All variables in \code{f} are also retained.
 }
 \description{
 This function takes the information on distributions from the \code{all.scenarios} data set (which comes from
-the \code{\link{source_variables_12112015}} input file) and converts it into the parameter set needed by SHEDS.HT.
+the Source_variables input file) and converts it into the parameter set needed by SHEDS.HT.
 }
 \details{
 The steps involved in this function are 1) converting \code{prevalence} from a percentage to a binomial form, 2)
@@ -27,9 +27,6 @@ Each simulated person either "does" or "does not" partake in this scenario. Simi
 variable, except that the returned values may be larger than one (that is, 2 or more) for very frequent scenarios.  All the
 exposure equations contain the \code{prevalence} variable. If \code{prevalence} is set to one for that person, the exposure
 is as expected, but if \code{prevalence}=0 then no exposure occurs.
-}
-\seealso{
-\code{\link{Source_vars}}, \code{\link{Run}}
 }
 \author{
 Kristin Isaacs, Graham Glen

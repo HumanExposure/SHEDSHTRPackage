@@ -7,7 +7,7 @@
 add.fugs(n.per, x, pdmf)
 }
 \arguments{
-\item{n.per}{The total number of simulated persons in this model run specified in the \code{\link{Run}} file}
+\item{n.per}{The total number of simulated persons in this model run specified in the Run file}
 
 \item{x}{the output of the \code{\link{read.fug.inputs}} function.}
 
@@ -15,7 +15,7 @@ add.fugs(n.per, x, pdmf)
 the media specific exposure factors, and the  number of baths taken and hand wash events occurring per day for each person.}
 }
 \value{
-pdmff Output contains values sampled from the distributions of each relevant variable in the \code{\link{Fugacity}}
+pdmff Output contains values sampled from the distributions of each relevant variable in the Fugacity
  input file for each theoretical person.
 }
 \description{
@@ -28,7 +28,7 @@ n their original units except for those with units ug/cm2, which are converted t
 all masses are in ug and all lengths are in m.
 }
 \seealso{
-\code{\link{add.factors}}, \code{\link{add.media}}, \code{\link{select_people}}, \code{\link{Fugacity}}, \code{\link{run}}
+\code{\link{add.factors}}, \code{\link{add.media}}, \code{\link{run}}
 }
 \author{
 Kristin Isaacs, Graham Glen

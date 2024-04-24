@@ -15,7 +15,8 @@ Note: The "source chemical", "source variable", and "source scenario" files that
 source_chem_ac.csv: Source chemical file for the artsandcrafts example run
 source_chem_food.csv: Source chemical file for the food_residue example run
 source_chem_others.csv: Source chemical file for the other_sources example run
-source_chem_products.csv: Source chemical file for consumer products in CPDat
+source_chem_products.csv: Source chemical file for consumer products in CPDat 2016
+source_chem_cpdatv3_max.csv: Source chemical file for consumer products in CPDat V3 (2021): maximum weight fraction for products
 
 source_scen_food.csv: Source scenario file for the artsandcrafts example run
 source_scen_others.csv: Source scenario file for the other_sources example run
@@ -29,4 +30,4 @@ run_artsandcrafts.txt: Run file for example run artsandcrafts
 run_food_residue.txt: Run file for example run food_residue
 run_other_sources.txt: Run file for example run other_sources
 run_products.txt: Run file for consumer products in CPDat
-run_CPDat.txt: Run file for consumer products in CPDat (same run as run_products.txt, just added to match QuickStart Guide names)
+run_cpdatv3max.txt: Run file for consumer products in CPDat V3 (maximum weight fractions for products)

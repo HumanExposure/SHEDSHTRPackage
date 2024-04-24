@@ -24,9 +24,6 @@ on all.scenarios devoted to this combination.}
 This function summarizes the all.scenarios data set by condensing each chemical-scenario combination into one row. The
 number of rows of data for this combination on all.scenarios is recorded here.
 }
-\seealso{
-\code{\link{Run}}, \code{\link{Source_chem_foods}}, \code{\link{Source_chem_prods}}, \code{\link{Source_scen_food}},  \code{\link{Source_scen_prods}}
-}
 \author{
 Kristin Isaacs, Graham Glen
 }

@@ -7,7 +7,7 @@
 chem.fug(n.per, cprops, x)
 }
 \arguments{
-\item{n.per}{The total number of simulated persons in this model run specified in the \code{\link{Run}} file.}
+\item{n.per}{The total number of simulated persons in this model run specified in the Run file.}
 
 \item{cprops}{The chemical properties required for SHEDS-HT (output of \code{chem.props} function). The default data was
 prepared from publicly available databases using a custom program (not part of SHEDS-HT).
@@ -42,7 +42,7 @@ as otherwise the correct conversions depend on the distributional form (for exam
 but not for the lognormal).
 }
 \seealso{
-\code{\link{Fugacity}}, \code{\link{Run}}, \code{\link{run}}, \code{\link{Chem_props}}, \code{\link{get.fug.concs}}
+\code{\link{run}}, \code{\link{get.fug.concs}}
 }
 \author{
 Kristin Isaacs, Graham Glen

@@ -23,6 +23,9 @@ for exposure variables.}
 
 \item{io}{A binary variable indicating whether the volume of the aerosol is used to approximate the affected volume.}
 }
+\value{
+dir.inh.vap The calculated quantity of chemical inhalation from exposure to vapors, such as those emitted by paint.
+}
 \description{
 Models the inhalation exposure from the vapors of volatile chemicals for each theoretical person.
 }
@@ -31,7 +34,7 @@ This scenario considers inhalation exposure from vapors (not aerosols). For exam
 inhalation of vapor, but it does not involve aerosols (unless it is spray paint).
 For this scenario, the vapor pressure and the molecular weight are relevant variables for determining exposure. These
 variables are included in the input to the \code{cprops} argument, which is drawn internally from the
-\code{\link{Chem_props}} file.
+Chem_props file.
 The function produces a \code{prevalence} value, which reflects the fraction of the population who use this scenario at
 all. It also produces a \code{frequency} value, which is the mean number of times per year this scenario occurs among that
 fraction of the population specified by \code{prevalence}.
@@ -52,7 +55,7 @@ The dose equals the product of \code{exposure} (g/m3), basal ventilation rate, \
 conversion factor of 1E6 from grams to micrograms.
 }
 \seealso{
-\code{\link{run}}, \code{\link{p.round}}, \code{\link{read.chem.props}}, \code{\link{Chem_props}}
+\code{\link{run}}, \code{\link{p.round}}, \code{\link{read.chem.props}}
 }
 \author{
 Kristin Isaacs, Graham Glen

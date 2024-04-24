@@ -18,7 +18,7 @@ the definition of run().}
 No variable will be returned.
 }
 \description{
-Function to call the \code{\link{Run}} txt file, which consists of user-defined parameters and calls to input files required
+Function to call the Run txt file, which consists of user-defined parameters and calls to input files required
 to initialize a SHEDS.HT run.
 }
 \details{

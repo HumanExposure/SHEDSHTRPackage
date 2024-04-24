@@ -4,7 +4,7 @@
 \alias{summary.stats}
 \title{summary.stats}
 \usage{
-\method{summary}{stats}(x)
+summary.stats(x)
 }
 \arguments{
 \item{x.}{Data set passed from summarize.chemical for a cohort}

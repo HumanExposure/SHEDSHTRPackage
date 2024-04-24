@@ -1,23 +1,23 @@
 #' distrib
 #'
-#' produces random samples from distributuions
+#' produces random samples from distributions
 #'
 #' @param shape Required with no default. The permited inputs are Bernoulli, binomial, beta, discrete, empirical,
 #' exponential, gamma, lognormal, normal, point, probability, triangle, uniform, and Weibull.
 #'
-#' @param par1 optional value requared for some shapes. Defulat = none
+#' @param par1 optional value required for some shapes. Default = none
 #'
-#' @param par2 optional value requared for some shapes. Defulat = none
+#' @param par2 optional value required for some shapes. Default = none
 #'
-#' @param par3 optional value requared for some shapes. Defulat = none
+#' @param par3 optional value required for some shapes. Default = none
 #'
-#' @param par4 optional value requared for some shapes. Defulat = none
+#' @param par4 optional value required for some shapes. Default = none
 #'
-#' @param It optional value requared for some shapes. Defulat = none
+#' @param It optional value required for some shapes. Default = none
 #'
-#' @param Ut optional value requared for some shapes. Defulat = none
+#' @param Ut optional value required for some shapes. Default = none
 #'
-#' @param resamp optional value requared for some shapes. Defulat = 'y'
+#' @param resamp optional value required for some shapes. Default = 'y'
 #'
 #' @param n Optional	Default = 1
 #'
@@ -440,7 +440,9 @@ summarize.chemical = function(x,c,chem,chemical,set,sets,specs) {
 #'
 #' @seealso \code{\link{summarize.chemical}}
 #'
-#' @export
+#' @usage summary.stats(x)
+#'
+#' @export summary.stats
 
 summary.stats = function(x) {
   y1                <- as.numeric(x$exp.dermal.tot)
@@ -557,11 +559,29 @@ trimzero = function(x,y) {
 
 unpack = function(filelist="") {
   if (filelist=="") {
-    filelist <- c("activity_diaries","chem_props","diet_diaries","exp_factors","fugacity","media","physiology","population",
-                  "run_artsandcrafts","run_food_residue","run_other_sources","run_products",
-                  "source_chem_ac","source_chem_food","source_chem_products","source_chem_others",
-                  "source_scen_food","source_scen_products","source_scen_others",
-                  "source_vars_products","source_vars_others","README","run_CPDat")
+    filelist <- c("activity_diaries",
+                  "chem_props",
+                  "diet_diaries",
+                  "exp_factors",
+                  "fugacity",
+                  "media",
+                  "physiology",
+                  "population",
+                  "run_artsandcrafts",
+                  "run_food_residue",
+                  "run_other_sources",
+                  "run_CPDatV3max",
+                  "source_chem_ac",
+                  "source_chem_food",
+                  "source_chem_CPDatV3_max",
+                  "source_chem_CPDatV3_midrange",
+                  "source_chem_others",
+                  "source_scen_food",
+                  "source_scen_products",
+                  "source_scen_others",
+                  "source_vars_products",
+                  "source_vars_others",
+                  "README")
   }
   inlib <- paste0(getwd(),"/inputs")
   if (dir.exists(inlib)) {

@@ -15,7 +15,7 @@ add.factors(n, gen.f, med.f, exp.f, surf, pdm)
 
 \item{med.f}{Media specific exposure factors presented as a data table. Output from the \code{\link{med.factor.tables}} function.}
 
-\item{exp.f}{Distributional parameters for the exposure factors. Output of the \code{\link{exp.factors}} function.}
+\item{exp.f}{Distributional parameters for the exposure factors. Output of the exp.factors function.}
 
 \item{surf}{A list of surface media. Modified output of the \code{\link{read.media.file}} function.}
 

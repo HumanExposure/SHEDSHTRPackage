@@ -4,8 +4,14 @@
 \alias{ExportDataTables}
 \title{A function used to export .rda files distributed with ShedsHT package}
 \usage{
-ExportDataTables(data_set_name, output_pth, output_fname,
-  quote_opt = TRUE, na_opt = "", row_names_opt = FALSE)
+ExportDataTables(
+  data_set_name,
+  output_pth,
+  output_fname,
+  quote_opt = TRUE,
+  na_opt = "",
+  row_names_opt = FALSE
+)
 }
 \arguments{
 \item{data_set_name}{A string type parameter, represents name of an ".rda" data set.}

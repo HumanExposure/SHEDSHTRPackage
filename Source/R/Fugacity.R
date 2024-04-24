@@ -2,7 +2,7 @@
 #'
 #' Evaluates the variables in the fugacity input file and creates values for those variables corresponding to each simulated person.
 #'
-#' @param n.per The total number of simulated persons in this model run specified in the \code{\link{Run}} file
+#' @param n.per The total number of simulated persons in this model run specified in the Run file
 #'
 #' @param x the output of the \code{\link{read.fug.inputs}} function.
 #'
@@ -14,12 +14,12 @@
 #' n their original units except for those with units ug/cm2, which are converted to ug/m2. In the fugacity calculations,
 #' all masses are in ug and all lengths are in m.
 #'
-#' @return pdmff Output contains values sampled from the distributions of each relevant variable in the \code{\link{Fugacity}}
+#' @return pdmff Output contains values sampled from the distributions of each relevant variable in the Fugacity
 #'  input file for each theoretical person.
 #'
 #' @author Kristin Isaacs, Graham Glen
 #'
-#' @seealso \code{\link{add.factors}}, \code{\link{add.media}}, \code{\link{select_people}}, \code{\link{Fugacity}}, \code{\link{run}}
+#' @seealso \code{\link{add.factors}}, \code{\link{add.media}}, \code{\link{run}}
 #'
 #' @keywords SHEDS
 #'
@@ -43,7 +43,7 @@ add.fugs = function(n.per,x,pdmf) {
 #' variability and uncertainty. These distributions are then sampled to create chemical specific parameters associated
 #' with the exposure of each simulated person.
 #'
-#' @param n.per The total number of simulated persons in this model run specified in the \code{\link{Run}} file.
+#' @param n.per The total number of simulated persons in this model run specified in the Run file.
 #'
 #' @param cprops The chemical properties required for SHEDS-HT (output of \code{chem.props} function). The default data was
 #' prepared from publicly available databases using a custom program (not part of SHEDS-HT).
@@ -72,7 +72,7 @@ add.fugs = function(n.per,x,pdmf) {
 #'
 #' @author Kristin Isaacs, Graham Glen
 #'
-#' @seealso \code{\link{Fugacity}}, \code{\link{Run}}, \code{\link{run}}, \code{\link{Chem_props}}, \code{\link{get.fug.concs}}
+#' @seealso \code{\link{run}}, \code{\link{get.fug.concs}}
 #'
 #' @keywords SHEDS
 #'
@@ -244,7 +244,7 @@ chem.fug = function(n.per,cprops,x) {
 #'
 #' @param x The output of the \code{\link{add.fugs}} function.
 #'
-#' @param cfug The output of the \code{\link{chem_fug}} function, a data set with the chemical specific parameters for each
+#' @param cfug The output of the \code{\link{chem.fug}} function, a data set with the chemical specific parameters for each
 #' combination of chemical and simulated person. For each chemical, the chemical specific parameters assigned to a given person
 #' are randomly sampled from distributions on those parameters. These distributions are created from point estimates to reflect
 #' real-world uncertainty and variability.
@@ -267,7 +267,7 @@ chem.fug = function(n.per,cprops,x) {
 #'
 #' @author Kristin Isaacs, Graham Glen
 #'
-#' @seealso \code{\link{chem_fugs}}, \code{\link{Fugacity}}, \code{\link{Run}}, \code{\link{run}}, \code{\link{get.y0.concs}}
+#' @seealso \code{\link{run}}, \code{\link{get.y0.concs}}
 #'
 #' @keywords SHEDS kwd2
 #'
@@ -367,9 +367,9 @@ get.fug.concs = function(sdata,chem.data,x,cfug) {
 #' @param chem.data The list of scenario-specific information for the chemicals being evaluated. Generated internally.
 #'
 #' @param pdmff Output from the \code{\link{add.fugs}} function. A data set containing values sampled from the distributions
-#' of each relevant variable in the \code{\link{Fugacity}} input file for each theoretical person.
+#' of each relevant variable in the Fugacity input file for each theoretical person.
 #'
-#' @param cfug The output of the \code{\link{chem_fug}} function, a data set with the chemical specific parameters for each
+#' @param cfug The output of the \code{\link{chem.fug}} function, a data set with the chemical specific parameters for each
 #' combination of chemical and simulated person. For each chemical, the chemical specific parameters assigned to a
 #' given person are randomly sampled from distributions on those parameters. These distributions are created from point
 #' estimates to reflect real-world uncertainty and variability.
@@ -384,7 +384,7 @@ get.fug.concs = function(sdata,chem.data,x,cfug) {
 #'
 #' @author Kristin Isaacs, Graham Glen
 #'
-#' @seealso \code{\link{chem_fugs}}, \code{\link{Fugacity}}, \code{\link{Run}}, \code{\link{run}}, \code{\link{get.y0.concs}}
+#' @seealso \code{\link{chem.fug}}, \code{\link{run}}, \code{\link{get.y0.concs}}
 #'
 #' @keywords SHEDS kwd2
 #'
@@ -441,7 +441,7 @@ get.y0.concs = function(sdata,chem.data,pdmff,cfug) {
 #             which are converted to [ug/m2]. In the fugacity calculations, all masses
 #             are in [ug] and all lengths are in [m].
 #
-# chen.fug()  This function obtains chemical-specific properities from the chem.data
+# chem.fug()  This function obtains chemical-specific properities from the chem.data
 #             data set, all of which are point values. Here distributions are
 #             defined around the reported value for all variables except
 #             molecular weight. The distributions reflect both uncertainty and

@@ -4,23 +4,34 @@
 \alias{distrib}
 \title{distrib}
 \usage{
-distrib(shape = "", par1 = NA, par2 = NA, par3 = NA, par4 = NA,
-  lt = NA, ut = NA, resamp = "y", n = 1, q = NA, p = c(1),
-  v = "")
+distrib(
+  shape = "",
+  par1 = NA,
+  par2 = NA,
+  par3 = NA,
+  par4 = NA,
+  lt = NA,
+  ut = NA,
+  resamp = "y",
+  n = 1,
+  q = NA,
+  p = c(1),
+  v = ""
+)
 }
 \arguments{
 \item{shape}{Required with no default. The permited inputs are Bernoulli, binomial, beta, discrete, empirical,
 exponential, gamma, lognormal, normal, point, probability, triangle, uniform, and Weibull.}
 
-\item{par1}{optional value requared for some shapes. Defulat = none}
+\item{par1}{optional value required for some shapes. Default = none}
 
-\item{par2}{optional value requared for some shapes. Defulat = none}
+\item{par2}{optional value required for some shapes. Default = none}
 
-\item{par3}{optional value requared for some shapes. Defulat = none}
+\item{par3}{optional value required for some shapes. Default = none}
 
-\item{par4}{optional value requared for some shapes. Defulat = none}
+\item{par4}{optional value required for some shapes. Default = none}
 
-\item{resamp}{optional value requared for some shapes. Defulat = 'y'}
+\item{resamp}{optional value required for some shapes. Default = 'y'}
 
 \item{n}{Optional    Default = 1}
 
@@ -30,16 +41,16 @@ exponential, gamma, lognormal, normal, point, probability, triangle, uniform, an
 
 \item{v}{Optional    Default = none}
 
-\item{It}{optional value requared for some shapes. Defulat = none}
+\item{It}{optional value required for some shapes. Default = none}
 
-\item{Ut}{optional value requared for some shapes. Defulat = none}
+\item{Ut}{optional value required for some shapes. Default = none}
 }
 \value{
 A vector of "n" values from one distribution, where "n" is
 either the input argument (if given), or the length of the input vector "q".
 }
 \description{
-produces random samples from distributuions
+produces random samples from distributions
 }
 \details{
 This process is central to SHEDS because it is a stochastic model.  The "shape" is the essential argument,

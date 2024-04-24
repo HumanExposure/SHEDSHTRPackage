@@ -11,7 +11,7 @@
 
 #' run
 #'
-#' Function to call the \code{\link{Run}} txt file, which consists of user-defined parameters and calls to input files required
+#' Function to call the Run txt file, which consists of user-defined parameters and calls to input files required
 #' to initialize a SHEDS.HT run.
 #'
 #' @param run.file The name of the run file to be used for a given run.  Many different "Run"" files may be set up for special
@@ -31,7 +31,6 @@
 #'
 #' @seealso \code{\link{Run.txt}}, \code{\link{read.run.file}}
 #'
-#' @keyword kwd1
 #'
 #' @export
 
@@ -93,10 +92,10 @@ run = function(run.file="", wd="") {
 
       chem      <- specs$chem.list[c]
       cb        <- make.cbase(base,chem)
-      cprops    <- chem.props[chem.props$cas==chem]
+      cprops    <<- chem.props[chem.props$cas==chem]
       cfug      <- chem.fug(n.per,cprops,fug.vars[1])
-      schem     <- scv[scv$cas==chem]
-      sources   <- unique(schem$src)
+      schem     <<- scv[scv$cas==chem]
+      sources   <<- unique(schem$src)
       n.csrc    <- length(sources)
       cvar.list <- unique(schem$varname)
       n.cvar    <- length(cvar.list)
@@ -107,10 +106,10 @@ run = function(run.file="", wd="") {
                                             "f.dermal","f.ingest","f.inhal","mean.mass"))
       src.names <- c(sources,"Total")
       for (s in 1:n.csrc) {
-        cat("\n Starting source ",s, " of chem ",c,"(",cprops$cas,") of ",specs$n.chem)
         src   <- sources[s]
         scsel <- schem$src==src
         sc    <- schem[scsel]
+        cat("\n Starting source ",s," of chem ",c," (",cprops$cas,") of ",specs$n.chem, "(",cprops$chem.name," - ",sc$description[1],")")
         for (v in 1:nrow(sc)) {
           q <- runif(n.per)
           chem.data[vpos(sc[v]$varname,cvar.list)] <- distrib(sc[v]$form, sc[v]$par1,
@@ -316,36 +315,75 @@ run = function(run.file="", wd="") {
 #'
 #' @seealso \code{\link{run}}
 #'
-#' @keyword SHEDS.HT
+#' 
 #'
 #' @export
 
-setup = function(wd="") {
-  # WD is the working directory, assumed to be one level up from the R,
-  # input, and output directories. File path names are relative to this.
-  #Disclaimer
-  cat("\nShedsHT Version 0.1.7 (02/21/2019)")
-  cat("\nDisclaimer")
-  cat("\nThe United States Environmental Protection Agency through its Office of Research and Development
-  funded and collaborated in the research and development of this software, in part under Contract EP-C-14-001
-  to ICF International. The model is publicly available in Beta version form. All input data used for a given
-  application should be reviewed by the researcher so that the model results are based on appropriate data
-  sources for the given application. This model, default input files, and R package are under continued development
-  and testing. The model equations and approach are published in the peer-reviewed literature
-  (Isaacs et al. Environ. Sci. Technol. 2014, 48, 12750-12759). The data included herein do not represent
-  and should not be construed to represent any Agency determination or policy.")
-  if (wd!="") setwd(wd)
-  suppressPackageStartupMessages(TRUE)
-  # Load required packages
-  library("data.table")
-  library("stringr")
-  library("plyr")
-  library("ggplot2")
+  
+  setup = function(wd="") {
+    # WD is the working directory, assumed to be one level up from the R,
+    # input, and output directories. File path names are relative to this.
+    #Disclaimer
+    cat("\nShedsHT Version 0.1.10 (04/23/2024)")
+    cat("\nDisclaimer")
+    cat("\nThe United States Environmental Protection Agency through its Office of Research and Development
+      funded and collaborated in the research and development of this software, in part under Contract EP-C-14-001
+      to ICF International. The model is publicly available in Beta version form. All input data used for a given
+      application should be reviewed by the researcher so that the model results are based on appropriate data
+      sources for the given application. This model, default input files, and R package are under continued development
+      and testing. The model equations and approach are published in the peer-reviewed literature
+      (Isaacs et al. Environ. Sci. Technol. 2014, 48, 12750-12759). The data included herein do not represent
+      and should not be construed to represent any Agency determination or policy.\n")
+    if (wd!="") setwd(wd)
+    suppressPackageStartupMessages(TRUE)
+    
+    #Create Input
+    
+    inlib <- paste0(getwd(), "/inputs")
+    
+    if (!dir.exists(inlib)) {
+      dir.create("inputs")
+      cat("\n Inputs folder was created in the working directory. \n")
+    }
+    
+    #Install dependencies
+    
+    if (!("data.table" %in% rownames(installed.packages()))){
+      print("Installing data.table packages - required for SHEDS package")
+      install.packages("data.table")}
+    
+    if (!("stringr" %in% rownames(installed.packages()))){
+      print("Installing stringr packages - required for SHEDS package")
+      install.packages("stringr")}
+    
+    if (!("dplyr" %in% rownames(installed.packages()))){
+      print("Installing dplyr packages - required for SHEDS package")
+      install.packages("dplyr")}
+    
+    if (!("plyr" %in% rownames(installed.packages()))){
+      print("Installing dplyr packages - required for SHEDS package")
+      install.packages("dplyr")}
+    
+    if (!("ggplot2" %in% rownames(installed.packages()))){
+      print("Installing ggplot2 packages - required for SHEDS package")
+      install.packages("ggplot2")}
+    
+    # if (!("tidyr" %in% rownames(installed.packages()))){
+    #   print("Installing tidyr packages - required for SHEDS package")
+    #   install.packages("tidyr")}
+    
+    # Load required packages
+    library("data.table")
+    library("stringr")
+    library("plyr")
+    library("dplyr")
+    library("ggplot2")
+   # library("tidyr")
 }
 
 #' act.diary.pools
 #'
-#' Assigns activity diaries from the \code{\link{Activity_diaries}} input on the \code{\link{Run}} file
+#' Assigns activity diaries from the Activity_diaries input on the Run file
 #' (read through the \code{\link{read.act.diaries}} function) to pools based on age, gender, and season
 #'
 #' @param diaries A data set created internally in SHEDS.HT through the \code{\link{read.act.diaries}} function. The data are
@@ -360,7 +398,7 @@ setup = function(wd="") {
 #' The code contains four loops and on each step performs a sub-setting of the list of diary numbers.
 #'
 #' @return pool A vector of lists.  The length of \code{pool} is the product of the genders, seasons, and ages inputs specified
-#' in the \code{\link{Run}} file. Each element is a list of acceptable activity diary numbers for each year of age, gender,
+#' in the Run file. Each element is a list of acceptable activity diary numbers for each year of age, gender,
 #' weekend, and season combination. For example, \code{pool}[100] may have the name M0P99, which indicates that it is for
 #' males, on weekdays, in spring,for age=99.
 #' In addition, If the function runs successfully, the following message will be printed:
@@ -369,13 +407,13 @@ setup = function(wd="") {
 #' @author Kristin Isaacs, Graham Glen
 #'
 #' @note The input to \code{act.diary.pools}, diaries, is created by reading in the Activity_diaries input file (specified on
-#' the \code{\link{Run}} file) with the \code{\link{read.act.diaries}} function within the \code{\link{run}} function.
+#' the Run file) with the \code{\link{read.act.diaries}} function within the \code{\link{run}} function.
 #'
 #' @seealso \code{\link{run}}
 #'
-#' @keyword SHEDS
+#' @usage act.diary.pools(diaries,specs)
 #'
-#' @export
+#' @export act.diary.pools
 
 act.diary.pools = function(diaries,specs) {
   i <- 0
@@ -402,7 +440,7 @@ act.diary.pools = function(diaries,specs) {
 
 #' diet.diary.pools
 #'
-#' Assigns activity diaries from the \code{\link{Diet_diaries}} input on the \code{\link{Run}} file
+#' Assigns activity diaries from the Diet_diaries input on the Run file
 #' (read through the \code{\link{read.run.file}} function) to pools based on age and gender.
 #'
 #' @param diet.diaries A data set created internally in SHEDS.HT through the \code{\link{read.diet.diaries}} function.
@@ -417,19 +455,19 @@ act.diary.pools = function(diaries,specs) {
 #' four loops and on each step performs a sub-setting of the list of diary numbers.
 #'
 #' @return dpool A vector of lists.  The length of \code{dpool} is the product of the gender  and age inputs specified in
-#' the \code{\link{Run}} file. Each element is a list of acceptable diet diary numbers for each year of age and each gender
+#' the Run file. Each element is a list of acceptable diet diary numbers for each year of age and each gender
 #' combination.
 #' In addition, if the function runs successfully, the following message will be printed: "Dietary Diary Pooling completed"
 #'
 #' @author Kristin Isaacs, Graham Glen
 #'
-#' @note The input to \code{diet.diary.pools}, \code{diet.diaries}, is created by reading in the \code{\link{Diet_diaries}}
-#' input file (specified on the \code{\link{Run}} file) with the \code{\link{read.diet.diaries}} function within the
+#' @note The input to \code{diet.diary.pools}, \code{diet.diaries}, is created by reading in the Diet_diaries
+#' input file (specified on the Run file) with the \code{\link{read.diet.diaries}} function within the
 #' \code{\link{run}} function.
 #'
-#' @seealso \code{\link{Diet_diaries}}, \code{\link{run}}, \code{\link{read.run.file}}, \code{\link{Run}}
+#' @seealso  \code{\link{run}}, \code{\link{read.run.file}}
 #'
-#' @keyword SHEDS
+#' 
 #'
 #' @export
 
@@ -453,11 +491,11 @@ diet.diary.pools = function(diaries,specs) {
 #' gen.factor.tables
 #'
 #' Constructs tables of non-media specific exposure factors for each relevant combination of age, gender, and season. The
-#' input is from the \code{\link{Exp_actors}} file (specified on the \code{\link{Run}} file) after being read through the
+#' input is from the Exp_factors file (specified on the Run file) after being read through the
 #' \code{\link{read.exp.factors}} function.
 #'
 #' @param ef A data set created internally using the \code{\link{run}} function and the \code{\link{read.exp.factors}}
-#' function to import the user specified \code{\link{Exp_factors}} input file. The data set contains the distributional
+#' function to import the user specified Exp_factors input file. The data set contains the distributional
 #' parameters for the exposure factors. All of these variables may have age or gender-dependent distributions, although
 #' in the absence of data, many are assigned a single distribution from which all persons are sampled.
 #'
@@ -470,12 +508,11 @@ diet.diary.pools = function(diaries,specs) {
 #'
 #' @author Kristin Isaacs, Graham Glen
 #'
-#' @note The input to \code{gen.factor.tables} is created by reading in the \code{\link{Exp_factors}} input file specified on
-#' the \code{\link{Run} file with the \code{\link{read.exp.factors}} function within the \code{\link{run}} function.
+#' @note The input to \code{gen.factor.tables} is created by reading in the Exp_factors input file specified on
+#' the Run file with the \code{\link{read.exp.factors}} function within the \code{\link{run}} function.
 #'
-#' @seealso \code{\link{Exp_factors}}, \code{\link{Run}}, \code{\link{run}}, \code{\link{read.exp.factors}}
+#' @seealso  \code{\link{run}}, \code{\link{read.exp.factors}}
 #'
-#' @keyword SHEDS
 #'
 #' @export
 
@@ -514,18 +551,18 @@ gen.factor.tables = function(ef=exp.factors) {
 #' of three media specific variables in the \code{ef} argument. These are avail.f, dermal.tc, and om.ratio.
 #'
 #' @param ef A data set created internally using the \code{\link{run}} function and the \code{\link{read.exp.factors}} function
-#' to import the user specified \code{\link{Exp_factors}} input file. The data set contains the distributional parameters for the
+#' to import the user specified Exp_factors input file. The data set contains the distributional parameters for the
 #' exposure factors. All of these variables may have age or gender-dependent distributions, although in the absence of data, many
 #' are assigned a single distribution from which all persons are sampled.
 #'
-#' @param media.sur A list of surface media. This data set is created internally by sub-setting the \code{\link{Media}} input
+#' @param media.sur A list of surface media. This data set is created internally by sub-setting the Media input
 #' file (read in with the \code{\link{read.media.file}} function within the \code{\link{run}} function) to extract only surface
 #' media.
 #'
 #' @details The three media specific variables in the \code{ef} argument are as follows:
-#' \code{avail.f}{Fraction of chemical available for transfer from surfaces via touching.}
-#' \code{dermal.tc}}{Dermal transfer coefficient, cm^2/hr.}
-#' \code{om.ratio}}{Ratio of object-to-mouth exposure to indirect dermal exposure.}
+#' \code{avail.f} Fraction of chemical available for transfer from surfaces via touching.
+#' \code{dermal.tc} Dermal transfer coefficient, cm^2/hr.
+#' \code{om.ratio} Ratio of object-to-mouth exposure to indirect dermal exposure.
 #'
 #' @return exp.med Media specific exposure factors presented as a data table. The present version of the model consists of only
 #' 3 such exposure factors, but the code will accept more. Depending on the user input, these generated exposure factors may be
@@ -536,14 +573,14 @@ gen.factor.tables = function(ef=exp.factors) {
 #'
 #' @author Kristin Isaacs, Graham Glen
 #'
-#' @note The first input argument to \code{med.factor.tables} (ef) is created by reading in the \code{\link{Exp_factors}}
-#' input file (specified on the \code{\link{Run}} file) with the \code{\link{read.exp.factors}} function within the
-#' \code{\link{run}} function. The \code{media.sur} input is created by sub-setting the \code{\link{Media}} input file (read in
+#' @note The first input argument to \code{med.factor.tables} (ef) is created by reading in the Exp_factors
+#' input file (specified on the Run file) with the \code{\link{read.exp.factors}} function within the
+#' \code{\link{run}} function. The \code{media.sur} input is created by sub-setting the Media input file (read in
 #' with the \code{\link{read.media.file}} function within the \code{\link{run}} function).
 #'
-#' @seealso \code{\link{Media}}, \code{\link{Exp_factors}}, \code{\link{Run}}, \code{\link{run}}, \code{\link{read.exp.factors}}, \code{\link{read.media.file}}
+#' @seealso \code{\link{run}}, \code{\link{read.exp.factors}}, \code{\link{read.media.file}}
 #'
-#' @keyword SHEDS
+#' 
 #'
 #' @export
 
@@ -600,7 +637,7 @@ med.factor.tables = function(ef, media.sur) {
 #'
 #' @seealso \code{\link{run}}, \code{\link{read.source.chem.file}}, \code{\link{read.source.vars.file}}
 #'
-#' @keyword SHEDS
+#' 
 #'
 #' @export
 
@@ -640,9 +677,8 @@ set.pars = function(vars) {
 #'
 #' @author Kristin Isaacs, Graham Glen
 #'
-#' @seealso \code{\link{Run}}, \code{\link{Source_chem_foods}}, \code{\link{Source_chem_prods}}, \code{\link{Source_scen_food}},  \code{\link{Source_scen_prods}}
 #'
-#' @keyword SHEDS
+#' 
 #'
 #' @export
 
@@ -685,10 +721,10 @@ chem.scenarios = function(all) {
 #'
 #' @details This is the first real step in the modeling process. It first fills an array \code{q} with uniform random numbers,
 #' with ten columns because there are 10 random variables defined by this function. There number of rows correspond to the number
-#' of persons, capped at the \code{set.size} specified in the \code{\link{Run}} input file (typically 5000).  Gender is selected
+#' of persons, capped at the \code{set.size} specified in the Run input file (typically 5000).  Gender is selected
 #' from a discrete (binomial) distribution where the counts of males and females in the study age range determines the gender
 #' probabilities. Age is tabulated next, separately for each gender. The counts by year of age are chosen for the appropriate
-#' gender and used as selection weights. Season is assigned randomly (equal weights) using those specified in the \code{\link{Run}}
+#' gender and used as selection weights. Season is assigned randomly (equal weights) using those specified in the Run
 #' input file. \code{Weekend} is set to one or zero, with a chance of 2/7 for the former.
 #' The next block of code assigns physiological variables. Weight is lognormal in SHEDS, so a normal is sampled first and then
 #' \code{exp()} is applied.  This means that the weight parameters refer to the properties of log(weight), which were fit by
@@ -708,9 +744,9 @@ chem.scenarios = function(all) {
 #'
 #' @seealso \code{\link{run}}, \code{\link{read.pop.file}}, \code{\link{read.phys.file}}, \code{\link{act.diary.pools}}, \code{\link{diet.diary.pools}}, \code{\link{read.act.diaries}}, \code{\link{read.diet.diaries}}, \code{\link{update.specs}}
 #'
-#' @keyword SHEDS
-#'
-#' @export
+#' @usage select.people(n, pop, py, act.p, diet.p, act.d, diet.d,specs)
+#' 
+#' @export select.people
 
 select.people = function(n, pop, py, act.p, diet.p, act.d, diet.d,specs) {
   # generate random numbers
@@ -791,7 +827,7 @@ select.people = function(n, pop, py, act.p, diet.p, act.d, diet.d,specs) {
 #' modeled in SHEDS.HT. Output of the \code{\link{select.people}} function
 #'
 #' @details To generate the exposure duration for each theoretical person, an array q of uniform random samples is generated with
-#' rows = \code{n} (per set, where set size is specified by the user in the \code{\link{Run}} input file) and columns =
+#' rows = \code{n} (per set, where set size is specified by the user in the Run input file) and columns =
 #' \code{nrow(media)} (the number of potential exposure media). An array called \code{dur} is created for the number of minutes on
 #' the activity diary in the relevant micro multiplied by the relevant probability of contact (as specified in the
 #' \code{media} input). The array consists of a row for each person and a column for each of the exposure media.  The output is a
@@ -805,7 +841,7 @@ select.people = function(n, pop, py, act.p, diet.p, act.d, diet.d,specs) {
 #'
 #' @seealso \code{\link{select.people}}, \code{\link{read.media.file}}
 #'
-#' @keyword SHEDS
+#' 
 #'
 #' @export
 
@@ -834,7 +870,7 @@ add.media = function(n, media, pd) {
 #'
 #' @param med.f Media specific exposure factors presented as a data table. Output from the \code{\link{med.factor.tables}} function.
 #'
-#' @param exp.f Distributional parameters for the exposure factors. Output of the \code{\link{exp.factors}} function.
+#' @param exp.f Distributional parameters for the exposure factors. Output of the exp.factors function.
 #'
 #' @param surf A list of surface media. Modified output of the \code{\link{read.media.file}} function.
 #'
@@ -875,7 +911,6 @@ add.media = function(n, media, pd) {
 #'
 #' @seealso \code{\link{eval.factors}}, \code{\link{post.exposure}}
 #'
-#' @keyword HEDS
 #'
 #' @export
 #'
@@ -929,7 +964,7 @@ add.factors = function(n, gen.f, med.f, exp.f, surf, pdm) {
 #'
 #' @param q User-specified list of desired quantiles to be included in the output.
 #'
-#' @param ef Distributional parameters for the exposure factors; an output of the \code{\link{exp.factors}} function and an
+#' @param ef Distributional parameters for the exposure factors; an output of the exp.factors function and an
 #' input argument to the \code{\link{add.factors}} function
 #'
 #' @return z A data frame specifying the form of the distribution and relevant parameters for each combination of exposure
@@ -947,9 +982,9 @@ add.factors = function(n, gen.f, med.f, exp.f, surf, pdm) {
 #'
 #' @author Krisin Isaacs, Graham Glen
 #'
-#' @seealso \code{\link{add.factors}}, \code{\link{exp.factors}}
+#' @seealso \code{\link{add.factors}}
 #'
-#'@keyword SHEDS
+#'
 #'
 #' @export
 
@@ -969,14 +1004,14 @@ eval.factors = function(r, q, ef) {
 
 #' make.cbase
 #'
-#' Extends the \code{base} data set, output from the \code{\link{generate.person.vars}} function, to include a set of
+#' Extends the \code{base} data set to include a set of
 #' chemical-specific exposure variables. Currently, all new variables are initialized to zero.
 #'
 #' @param base Data set of all chemical-independent information needed for the exposure assessment.  Each row corresponds to
 #' a simulated person. The variables consist of age, gender, weight, diet and activity diaries, food consumption, minutes in
 #' each micro, and the evaluation of the exposure factors for that person.
 #'
-#' @param chem List of the chemical(s) of interest, determined via the \code{chemical} input in the \code{\link{Run}} file.
+#' @param chem List of the chemical(s) of interest, determined via the \code{chemical} input in the Run file.
 #' The exposure variables for the specified chemicals will be appended to the \code{base} data set.
 #'
 #' @return The output is a data set cb consisting of the base data set, appended by the following columns:
@@ -999,9 +1034,9 @@ eval.factors = function(r, q, ef) {
 #'
 #' @author Kristin Isaacs, Graham Glen
 #'
-#' @seealso \code{\link{Run}}, \code{\link{run}}
+#' @seealso \code{\link{run}}
 #'
-#' @keyword SHEDS
+#' 
 #'
 #' @export
 
@@ -1030,9 +1065,9 @@ make.cbase = function(base,chem) {
 #' create.scen.factors
 #'
 #' This function takes the information on distributions from the \code{all.scenarios} data set (which comes from
-#' the \code{\link{source_variables_12112015}} input file) and converts it into the parameter set needed by SHEDS.HT.
+#' the Source_variables input file) and converts it into the parameter set needed by SHEDS.HT.
 #'
-#' @param f An internally generated data set from the \code{\link{Source_vars}} input file (as specified in the \code{\link{Run}}
+#' @param f An internally generated data set from the Source_vars input file (as specified in the Run
 #' file) containing data on the distribution of each source variable in SHEDS.HT.
 #'
 #' @details The steps involved in this function are 1) converting \code{prevalence} from a percentage to a binomial form, 2)
@@ -1049,9 +1084,8 @@ make.cbase = function(base,chem) {
 #'
 #' @author Kristin Isaacs, Graham Glen
 #'
-#' @seealso \code{\link{Source_vars}}, \code{\link{Run}}
 #'
-#' @keyword SHEDS
+#' 
 #'
 #' @export
 
@@ -1104,7 +1138,7 @@ create.scen.factors = function(f) {
 #' scen.factor.indices
 #'
 #' Constructs scenario-specific exposure factors for each relevant combination of age and  gender. The input is derived
-#' internally from the \code{\link{Source_vars}} file specified on the \code{\link{Run}} file.
+#' internally from the Source_vars file specified on the Run file.
 #'
 #' @param sdat The chemical-scenario data specific to a given combination of chemical and scenario.
 #'
@@ -1121,7 +1155,7 @@ create.scen.factors = function(f) {
 #'
 #' @author Kristin Isaacs, Graham Glen
 #'
-#' @keyword SHEDS
+#' 
 #'
 #' @export
 
@@ -1170,7 +1204,7 @@ scen.factor.indices = function(sdat,expgen) {
 #'
 #' @seealso \code{\link{run}}, \code{\link{p.round}}
 #'
-#' @keyword SHEDS
+#' 
 #'
 #' @export
 
@@ -1217,7 +1251,7 @@ dir.dermal = function(sd,cd) {
 #'
 #' @author Kristin Isaacs, Graham Glen
 #'
-#' @keyword SHEDS
+#' 
 #'
 #' @export
 
@@ -1334,7 +1368,7 @@ dir.inhal.aer = function(sd,cd,cb,io) {
 #' inhalation of vapor, but it does not involve aerosols (unless it is spray paint).
 #' For this scenario, the vapor pressure and the molecular weight are relevant variables for determining exposure. These
 #' variables are included in the input to the \code{cprops} argument, which is drawn internally from the
-#' \code{\link{Chem_props}} file.
+#' Chem_props file.
 #' The function produces a \code{prevalence} value, which reflects the fraction of the population who use this scenario at
 #' all. It also produces a \code{frequency} value, which is the mean number of times per year this scenario occurs among that
 #' fraction of the population specified by \code{prevalence}.
@@ -1354,13 +1388,13 @@ dir.inhal.aer = function(sd,cd,cb,io) {
 #' (typically people inhale air at an average of 1.75 times the basal rate to support common daily activities), and a
 #' conversion factor of 1E6 from grams to micrograms.
 #'
-#' @retrun dir.inh.vap The calculated quantity of chemical inhalation from exposure to vapors, such as those emitted by paint.
+#' @return dir.inh.vap The calculated quantity of chemical inhalation from exposure to vapors, such as those emitted by paint.
 #'
 #' @author Kristin Isaacs, Graham Glen
 #'
-#' @seealso \code{\link{run}}, \code{\link{p.round}}, \code{\link{read.chem.props}}, \code{\link{Chem_props}}
+#' @seealso \code{\link{run}}, \code{\link{p.round}}, \code{\link{read.chem.props}}
 #'
-#' @keyword SHEDS
+#' 
 #'
 #' @export
 
@@ -1429,7 +1463,7 @@ dir.inhal.vap = function(sd,cd,cprops,cb,io) {
 #'
 #' @seealso \code{\link{run}}, \code{\link{p.round}}
 #'
-#' @keyword SHEDS
+#' 
 #'
 #' @export
 
@@ -1451,7 +1485,7 @@ down.the.drain.mass = function(sd,cd) {
 #' @param cb Output of the \code{\link{make.cbase}} function.
 #'
 #' @param ftype Food consumption database which stores data on consumption in grams per day of each food type for each
-#' person being modeled. Generated internally from the  \code{\link{Diet_diaries}} data set.
+#' person being modeled. Generated internally from the  Diet_diaries data set.
 #'
 #' @details In this function, the variable \code{foods} is defined as a list of the names of the food groups,
 #' which are stored in both the \code{ftype} and \code{cb} arguments. The FOR loop picks the name of each food group as
@@ -1471,9 +1505,9 @@ down.the.drain.mass = function(sd,cd) {
 #'
 #' @author Kristin Isaacs, Graham Glen
 #'
-#' @seealso \code{\link{Diet_diaries}}, \code{\link{run}}, \code{\link{p.round}}, \code{\link{generate.person.vars}}, \code{\link{food.migration}}
+#' @seealso \code{\link{run}}, \code{\link{p.round}}, \code{\link{food.migration}}
 #'
-#' @keyword SHEDS  kwd2
+#'   kwd2
 #'
 #' @export
 
@@ -1514,7 +1548,7 @@ food.residue = function(cdata,cb,ftype) {
 #' exposure variables.
 #'
 #' @param ftype Food consumption database which stores data on consumption in grams per day of each food type for each person
-#' being modeled. Generated internally from the  \code{\link{Diet_diaries}} data set.
+#' being modeled. Generated internally from the  Diet_diaries data set.
 #'
 #' @details If migration data is stored in the \code{cdata} argument, this is added to the total exposure calculated in the
 #' \code{\link{food.residue}} function.
@@ -1524,9 +1558,9 @@ food.residue = function(cdata,cb,ftype) {
 #'
 #' @author Kristin Isaacs, Graham Glen
 #'
-#' @seealso \code{\link{Diet_diaries}}, \code{\link{run}}, \code{\link{p.round}}, \code{\link{make.cbase}}, \code{\link{food.residue}}
+#' @seealso \code{\link{run}}, \code{\link{p.round}}, \code{\link{make.cbase}}, \code{\link{food.residue}}
 #'
-#' @keyword SHEDS
+#' 
 #'
 #' @export
 
@@ -1575,9 +1609,9 @@ food.migration = function(cdata,sdata,cb,ftype) {
 #' environment.
 #' SHEDS.HT currently has two indirect exposure scenarios. One which applies to a one-time chemical treatment applied to a
 #' house, and another which applies to continual releases from articles. Both scenarios consist of two parts: the first
-#' determines the appropriate air and surface concentrations. That code is in the \code{\link{Fugacity}} module.  The second
+#' determines the appropriate air and surface concentrations. That code is in the Fugacity module.  The second
 #' part is the exposure calculation by the current function. Both types of indirect exposure scenarios call this function.
-#' The surface and air concentrations from the \code{\link{Fugacity}} module are premised on the product use actually occurring.
+#' The surface and air concentrations from the Fugacity module are premised on the product use actually occurring.
 #' Hence, \code{\link{indir.exposure}} starts by multiplying those concentrations by the \code{prevalence} (which is either 0
 #' or 1, evaluated separately for each person).
 #' For air, the exposure is the average daily concentration, which is the event concentration multiplied by the fraction of
@@ -1591,9 +1625,9 @@ food.migration = function(cdata,sdata,cb,ftype) {
 #'
 #' @author Kristin Isaacs, Graham Glen
 #'
-#' @seealso \code{\link{Fugacity}}, \code{\link{get.fug.concs}}, \code{\link{make.cbase}}, \code{\link{run}}
+#' @seealso \code{\link{get.fug.concs}}, \code{\link{make.cbase}}, \code{\link{run}}
 #'
-#' @keyword SHEDS
+#' 
 #'
 #' @export
 
@@ -1622,7 +1656,7 @@ indir.exposure = function(sd,cb,concs,chem.data) {
 #' @param cb A copy of the \code{base} data set output from the \code{\link{make.cbase}} function, with columns added for
 #' exposure variables.
 #'
-#' @param cprops The chemical properties required for SHEDS-HT. The default file (the \code{\link{Chem_props file}} read in
+#' @param cprops The chemical properties required for SHEDS-HT. The default file (the Chem_props file) read in
 #' by the \code{\link{read.chem.props}} function and modified before input into the current function) was prepared from
 #' publicly available databases using a custom program (not part of SHEDS-HT).  The default file contains 7 numerical inputs
 #' per chemical, and the required properties are molecular weight (\code{MW}), vapor pressure (\code{VP.Pa}), solubility
@@ -1667,7 +1701,6 @@ indir.exposure = function(sd,cb,concs,chem.data) {
 #'
 #' @seealso  \code{\link{make.cbase}}, \code{\link{Chemprops_small}}
 #'
-#' @keyword SHEDS kwd2
 #'
 #' @export
 #'

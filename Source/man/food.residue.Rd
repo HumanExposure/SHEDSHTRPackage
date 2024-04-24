@@ -12,7 +12,7 @@ food.residue(cdata, cb, ftype)
 \item{cb}{Output of the \code{\link{make.cbase}} function.}
 
 \item{ftype}{Food consumption database which stores data on consumption in grams per day of each food type for each
-person being modeled. Generated internally from the  \code{\link{Diet_diaries}} data set.}
+person being modeled. Generated internally from the  Diet_diaries data set.}
 }
 \value{
 dietary The calculated quantity of chemical exposure from food residue in grams per person per day.
@@ -36,7 +36,9 @@ for the dietary pathway. In principle, eating food could result in dermal exposu
 foods may have noticeable odors), but such exposures are not large enough to be of concern at present.
 }
 \seealso{
-\code{\link{Diet_diaries}}, \code{\link{run}}, \code{\link{p.round}}, \code{\link{generate.person.vars}}, \code{\link{food.migration}}
+\code{\link{run}}, \code{\link{p.round}}, \code{\link{food.migration}}
+
+  kwd2
 }
 \author{
 Kristin Isaacs, Graham Glen

@@ -16,12 +16,12 @@ variables followed by amounts (in grams/day) for a list of food types indicated 
 }
 \value{
 dpool A vector of lists.  The length of \code{dpool} is the product of the gender  and age inputs specified in
-the \code{\link{Run}} file. Each element is a list of acceptable diet diary numbers for each year of age and each gender
+the Run file. Each element is a list of acceptable diet diary numbers for each year of age and each gender
 combination.
 In addition, if the function runs successfully, the following message will be printed: "Dietary Diary Pooling completed"
 }
 \description{
-Assigns activity diaries from the \code{\link{Diet_diaries}} input on the \code{\link{Run}} file
+Assigns activity diaries from the Diet_diaries input on the Run file
 (read through the \code{\link{read.run.file}} function) to pools based on age and gender.
 }
 \details{
@@ -30,12 +30,12 @@ since every year of age has its own pool. Large pools may contain a list of seve
 four loops and on each step performs a sub-setting of the list of diary numbers.
 }
 \note{
-The input to \code{diet.diary.pools}, \code{diet.diaries}, is created by reading in the \code{\link{Diet_diaries}}
-input file (specified on the \code{\link{Run}} file) with the \code{\link{read.diet.diaries}} function within the
+The input to \code{diet.diary.pools}, \code{diet.diaries}, is created by reading in the Diet_diaries
+input file (specified on the Run file) with the \code{\link{read.diet.diaries}} function within the
 \code{\link{run}} function.
 }
 \seealso{
-\code{\link{Diet_diaries}}, \code{\link{run}}, \code{\link{read.run.file}}, \code{\link{Run}}
+\code{\link{run}}, \code{\link{read.run.file}}
 }
 \author{
 Kristin Isaacs, Graham Glen

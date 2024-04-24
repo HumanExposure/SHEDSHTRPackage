@@ -11,7 +11,7 @@ make.cbase(base, chem)
 a simulated person. The variables consist of age, gender, weight, diet and activity diaries, food consumption, minutes in
 each micro, and the evaluation of the exposure factors for that person.}
 
-\item{chem}{List of the chemical(s) of interest, determined via the \code{chemical} input in the \code{\link{Run}} file.
+\item{chem}{List of the chemical(s) of interest, determined via the \code{chemical} input in the Run file.
 The exposure variables for the specified chemicals will be appended to the \code{base} data set.}
 }
 \value{
@@ -34,11 +34,11 @@ inhalation scenario.}
 }
 }
 \description{
-Extends the \code{base} data set, output from the \code{\link{generate.person.vars}} function, to include a set of
+Extends the \code{base} data set to include a set of
 chemical-specific exposure variables. Currently, all new variables are initialized to zero.
 }
 \seealso{
-\code{\link{Run}}, \code{\link{run}}
+\code{\link{run}}
 }
 \author{
 Kristin Isaacs, Graham Glen

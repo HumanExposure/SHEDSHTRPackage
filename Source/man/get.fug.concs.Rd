@@ -13,7 +13,7 @@ get.fug.concs(sdata, chem.data, x, cfug)
 
 \item{x}{The output of the \code{\link{add.fugs}} function.}
 
-\item{cfug}{The output of the \code{\link{chem_fug}} function, a data set with the chemical specific parameters for each
+\item{cfug}{The output of the \code{\link{chem.fug}} function, a data set with the chemical specific parameters for each
 combination of chemical and simulated person. For each chemical, the chemical specific parameters assigned to a given person
 are randomly sampled from distributions on those parameters. These distributions are created from point estimates to reflect
 real-world uncertainty and variability.}
@@ -40,7 +40,7 @@ assumed to be zero in these calculations.  The time-dependent masses are multipl
 and thus approach zero when enough time has passed.
 }
 \seealso{
-\code{\link{chem_fugs}}, \code{\link{Fugacity}}, \code{\link{Run}}, \code{\link{run}}, \code{\link{get.y0.concs}}
+\code{\link{run}}, \code{\link{get.y0.concs}}
 }
 \author{
 Kristin Isaacs, Graham Glen

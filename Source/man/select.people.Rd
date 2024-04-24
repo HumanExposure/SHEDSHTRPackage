@@ -4,7 +4,7 @@
 \alias{select.people}
 \title{select.people}
 \usage{
-select.people(n, pop, py, act.p, diet.p, act.d, diet.d, specs)
+select.people(n, pop, py, act.p, diet.p, act.d, diet.d,specs)
 }
 \arguments{
 \item{n}{Number of persons.}
@@ -43,10 +43,10 @@ Assigns demographic and physiological variables to each theoretical person to be
 \details{
 This is the first real step in the modeling process. It first fills an array \code{q} with uniform random numbers,
 with ten columns because there are 10 random variables defined by this function. There number of rows correspond to the number
-of persons, capped at the \code{set.size} specified in the \code{\link{Run}} input file (typically 5000).  Gender is selected
+of persons, capped at the \code{set.size} specified in the Run input file (typically 5000).  Gender is selected
 from a discrete (binomial) distribution where the counts of males and females in the study age range determines the gender
 probabilities. Age is tabulated next, separately for each gender. The counts by year of age are chosen for the appropriate
-gender and used as selection weights. Season is assigned randomly (equal weights) using those specified in the \code{\link{Run}}
+gender and used as selection weights. Season is assigned randomly (equal weights) using those specified in the Run
 input file. \code{Weekend} is set to one or zero, with a chance of 2/7 for the former.
 The next block of code assigns physiological variables. Weight is lognormal in SHEDS, so a normal is sampled first and then
 \code{exp()} is applied.  This means that the weight parameters refer to the properties of log(weight), which were fit by

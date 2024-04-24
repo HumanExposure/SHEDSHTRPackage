@@ -4,13 +4,16 @@
 \alias{combine_output}
 \title{combine_output}
 \usage{
-combine_output(run.name = specs$run.name, out.file = "SHEDSOutFCS.csv",
-  metrics = c("5\%", "50\%", "75\%", "95\%", "99\%", "mean", "sd"))
+combine_output(
+  run.name = specs$run.name,
+  out.file = "SHEDSOutCombined.csv",
+  metrics = c("5\%", "50\%", "75\%", "95\%", "99\%", "mean", "sd")
+)
 }
 \arguments{
 \item{run.name}{default = name of last run (in current R session)}
 
-\item{out.file}{default="SHEDSOutFCS.csv"}
+\item{out.file}{default="SHEDSOutCombined.csv"}
 
 \item{metrics}{the summary statsistics to be pulled. default = c("5\%", "50\%", "75\%", "95\%", "99\%","mean","sd")}
 }
